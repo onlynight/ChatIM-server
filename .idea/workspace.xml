@@ -2,69 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04f25ec2-df30-40a1-b880-a645a4f3aba7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/4.8/fileChanges/last-build.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/4.8/fileContent/annotation-processors.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/4.8/fileContent/fileContent.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/vcsWorkingDirs/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/thriftCompiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Auth/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Auth/out/production/resources/config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/github/onlynight/chatim/server/auth/AuthServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/github/onlynight/chatim/server/auth/AuthServerHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/github/onlynight/chatim/server/auth/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Auth/src/main/java/com/github/onlynight/chatim/server/auth/config/ConfigReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Auth/src/main/resources/config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gate/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gate/build/libs/Gate-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gate/build/resources/main/config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gate/build/tmp/bootJar/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gate/out/production/resources/config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gate/src/main/java/com/github/onlynight/chatim/server/gate/GateServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gate/src/main/java/com/github/onlynight/chatim/server/gate/GateServerHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gate/src/main/java/com/github/onlynight/chatim/server/gate/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gate/src/main/java/com/github/onlynight/chatim/server/gate/config/ConfigReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gate/src/main/resources/config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Library/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Library/build/libs/Library-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Library/build/resources/main/protobuf/internal/internal.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Library/build/resources/main/protobuf/proto.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Library/build/resources/main/protobuf/protoc.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Library/build/tmp/jar/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Library/out/production/resources/protobuf/internal/internal.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Library/out/production/resources/protobuf/proto.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Library/out/production/resources/protobuf/protoc.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Library/src/main/java/com/github/onlynight/chatim/server/config/BaseConfigReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Library/src/main/java/com/github/onlynight/chatim/server/data/internal/Internal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Library/src/main/java/com/github/onlynight/chatim/server/data/parse/ParseMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Library/src/main/java/com/github/onlynight/chatim/server/data/parse/ParseMapRegistry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Library/src/main/java/com/github/onlynight/chatim/server/handler/DecodeHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Library/src/main/java/com/github/onlynight/chatim/server/handler/EncodeHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Library/src/main/resources/protobuf/internal/internal.proto" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Library/src/main/resources/protobuf/proto.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Library/src/main/resources/protobuf/protoc.exe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Logic/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Logic/out/production/resources/config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Logic/src/main/resources/config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileContent/annotation-processors.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileContent/fileContent.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/resourceHashesCache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/taskHistory/taskHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/vcsWorkingDirs/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -147,7 +97,7 @@
           <entry key="java" value="80" />
           <entry key="proto" value="2" />
           <entry key="provides" value="1" />
-          <entry key="xml" value="7" />
+          <entry key="xml" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -158,7 +108,7 @@
           <entry key="Manifest" value="1" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="PROTO" value="2" />
-          <entry key="XML" value="7" />
+          <entry key="XML" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -185,65 +135,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Library/src/main/java/com/github/onlynight/chatim/server/handler/DecodeHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="469">
-              <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Auth/src/main/java/com/github/onlynight/chatim/server/auth/AuthServerHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="75" selection-start-line="9" selection-start-column="75" selection-end-line="9" selection-end-column="75" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gate/src/main/java/com/github/onlynight/chatim/server/gate/GateServerHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Library/src/main/java/com/github/onlynight/chatim/server/handler/EncodeHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -1334,7 +1226,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540288197261" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540288590526" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -1454,26 +1346,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1540258065660</updated>
-      <workItem from="1540258070188" duration="23044000" />
+      <workItem from="1540258070188" duration="23671000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23044000" />
+    <option name="totallyTimeSpent" value="23671000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" />
       <window_info id="Image Layers" />
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Capture Tool" />
       <window_info id="UI Designer" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22068231" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22068231" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Spring" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.329718" />
+      <window_info anchor="bottom" id="Terminal" weight="0.329718" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Build" weight="0.32936078" />
@@ -1777,6 +1668,13 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="40" lean-forward="true" selection-start-line="4" selection-start-column="40" selection-end-line="4" selection-end-column="40" />
         </state>
       </provider>
     </entry>
