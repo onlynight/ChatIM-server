@@ -1,7 +1,7 @@
 package com.github.onlynight.chatim.server.auth;
 
 import com.github.onlynight.chatim.server.auth.config.ConfigReader;
-import com.github.onlynight.chatim.server.data.parse.ParseMapRegistry;
+import com.github.onlynight.chatim.server.data.parse.MessageMapRegistry;
 
 public class Main {
 
@@ -9,11 +9,11 @@ public class Main {
         ConfigReader config = new ConfigReader(Main.class.getClassLoader()
                 .getResourceAsStream("config.xml"));
 
-        ParseMapRegistry.initRegistry();
+        MessageMapRegistry.initRegistry();
 
         new Thread(() -> {
             new AuthServer(config.getAuthPort()).run();
-        });
+        }).start();
     }
 
 }

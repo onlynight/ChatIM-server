@@ -1,6 +1,6 @@
 package com.github.onlynight.chatim.server.handler;
 
-import com.github.onlynight.chatim.server.data.parse.ParseMap;
+import com.github.onlynight.chatim.server.data.parse.MessageMap;
 import com.google.protobuf.Message;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -43,7 +43,7 @@ public class DecodeHandler extends ByteToMessageDecoder {
 
         try {
             byte[] body = byteBuf.array();
-            Message message = ParseMap.getMessage(messageType, body);
+            Message message = MessageMap.getMessage(messageType, body);
             out.add(message);
             logger.info("Gate server receive message: length {} , messageType {}", length, messageType);
         } catch (Exception e) {

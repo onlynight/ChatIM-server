@@ -11,6 +11,12 @@ public class AuthServerHandler extends ChannelHandlerAdapter {
     }
 
     @Override
+    public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+        Internal.Handshake handshake = (Internal.Handshake) msg;
+        System.out.println(handshake);
+    }
+
+    @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
         cause.printStackTrace();
         ctx.close();

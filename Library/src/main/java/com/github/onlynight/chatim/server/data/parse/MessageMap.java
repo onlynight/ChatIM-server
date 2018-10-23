@@ -5,7 +5,7 @@ import com.google.protobuf.Message;
 import java.io.IOException;
 import java.util.HashMap;
 
-public class ParseMap {
+public class MessageMap {
 
     @FunctionalInterface
     public interface Parser {
