@@ -33,8 +33,8 @@ public class AuthServer {
                         @Override
                         protected void initChannel(SocketChannel ch) throws Exception {
                             ch.pipeline()
-//                                    .addLast(new EncodeHandler())
-//                                    .addLast(new DecodeHandler())
+                                    .addLast(new EncodeHandler())
+                                    .addLast(new DecodeHandler())
                                     .addLast(new AuthServerHandler());
                         }
                     });

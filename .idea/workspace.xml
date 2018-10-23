@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b167d439-1350-48cd-9a49-2c3f879dcb2c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Gate/src/main/java/com/github/onlynight/chatim/server/gate/connection/AuthConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Gate/src/main/java/com/github/onlynight/chatim/server/gate/handler/AuthConnectionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Library/src/main/java/com/github/onlynight/chatim/server/utils/MessageUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Auth/src/main/java/com/github/onlynight/chatim/server/auth/AuthServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/src/main/java/com/github/onlynight/chatim/server/auth/AuthServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Auth/src/main/java/com/github/onlynight/chatim/server/auth/AuthServerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/src/main/java/com/github/onlynight/chatim/server/auth/AuthServerHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Auth/src/main/java/com/github/onlynight/chatim/server/auth/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Auth/src/main/java/com/github/onlynight/chatim/server/auth/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gate/src/main/java/com/github/onlynight/chatim/server/gate/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gate/src/main/java/com/github/onlynight/chatim/server/gate/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/src/main/java/com/github/onlynight/chatim/server/data/parse/ParseMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library/src/main/java/com/github/onlynight/chatim/server/data/parse/MessageMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/src/main/java/com/github/onlynight/chatim/server/data/parse/ParseMapRegistry.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library/src/main/java/com/github/onlynight/chatim/server/data/parse/MessageMapRegistry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/src/main/java/com/github/onlynight/chatim/server/handler/DecodeHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library/src/main/java/com/github/onlynight/chatim/server/handler/DecodeHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/src/main/java/com/github/onlynight/chatim/server/handler/EncodeHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Library/src/main/java/com/github/onlynight/chatim/server/handler/EncodeHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gate/src/main/java/com/github/onlynight/chatim/server/gate/connection/AuthConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gate/src/main/java/com/github/onlynight/chatim/server/gate/connection/AuthConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gate/src/main/java/com/github/onlynight/chatim/server/gate/handler/AuthConnectionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Gate/src/main/java/com/github/onlynight/chatim/server/gate/handler/AuthConnectionHandler.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -84,13 +77,13 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="1" />
-          <entry key="java" value="40" />
+          <entry key="java" value="45" />
           <entry key="xml" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="40" />
+          <entry key="JAVA" value="45" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="XML" value="6" />
         </counts>
@@ -98,13 +91,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="19" />
-          <entry key="java" value="804" />
+          <entry key="java" value="952" />
+          <entry key="txt" value="26" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="804" />
-          <entry key="PLAIN_TEXT" value="19" />
+          <entry key="JAVA" value="952" />
+          <entry key="PLAIN_TEXT" value="45" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -134,10 +128,24 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Auth/src/main/java/com/github/onlynight/chatim/server/auth/AuthServerHandler.java">
+        <entry file="file://$PROJECT_DIR$/Gate/src/main/java/com/github/onlynight/chatim/server/gate/connection/AuthConnection.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+            <state relative-caret-position="153">
+              <caret line="24" column="27" lean-forward="true" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1081#1364#0" expanded="true" />
+                <element signature="e#1363#1364#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Gate/src/main/java/com/github/onlynight/chatim/server/gate/handler/AuthConnectionHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="430">
+              <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -145,17 +153,57 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.protobuf/protobuf-java/3.6.1/b0782bcd21ad5c52031e74efbc4c3d6a6df96130/protobuf-java-3.6.1-sources.jar!/com/google/protobuf/AbstractMessageLite.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="67" column="16" selection-start-line="67" selection-start-column="16" selection-end-line="67" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Auth/src/main/java/com/github/onlynight/chatim/server/auth/AuthServerHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Auth/src/main/java/com/github/onlynight/chatim/server/auth/AuthServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="32" column="33" lean-forward="true" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
+            <state relative-caret-position="359">
+              <caret line="37" column="66" selection-start-line="37" selection-start-column="49" selection-end-line="37" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#620#621#0" expanded="true" />
                 <element signature="e#652#653#0" expanded="true" />
+                <element signature="e#1162#1581#0" expanded="true" />
                 <element signature="e#1580#1581#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Library/src/main/java/com/github/onlynight/chatim/server/handler/DecodeHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Library/src/main/java/com/github/onlynight/chatim/server/handler/EncodeHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
             </state>
           </provider>
         </entry>
@@ -1175,12 +1223,12 @@
       <list>
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/Library/src/main/java/com/github/onlynight/chatim/server/utils/MessageUtil.java" />
-        <option value="$PROJECT_DIR$/Gate/src/main/java/com/github/onlynight/chatim/server/gate/handler/AuthConnectionHandler.java" />
         <option value="$PROJECT_DIR$/Gate/src/main/java/com/github/onlynight/chatim/server/gate/Main.java" />
-        <option value="$PROJECT_DIR$/Gate/src/main/java/com/github/onlynight/chatim/server/gate/connection/AuthConnection.java" />
         <option value="$PROJECT_DIR$/Auth/src/main/java/com/github/onlynight/chatim/server/auth/Main.java" />
-        <option value="$PROJECT_DIR$/Auth/src/main/java/com/github/onlynight/chatim/server/auth/AuthServerHandler.java" />
+        <option value="$PROJECT_DIR$/Gate/src/main/java/com/github/onlynight/chatim/server/gate/connection/AuthConnection.java" />
         <option value="$PROJECT_DIR$/Auth/src/main/java/com/github/onlynight/chatim/server/auth/AuthServer.java" />
+        <option value="$PROJECT_DIR$/Auth/src/main/java/com/github/onlynight/chatim/server/auth/AuthServerHandler.java" />
+        <option value="$PROJECT_DIR$/Gate/src/main/java/com/github/onlynight/chatim/server/gate/handler/AuthConnectionHandler.java" />
       </list>
     </option>
   </component>
@@ -1250,31 +1298,6 @@
             <path>
               <item name="ChatIM-server" type="b2602c69:ProjectViewProjectNode" />
               <item name="ChatIM-server" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="Auth" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChatIM-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChatIM-server" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="Auth" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChatIM-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChatIM-server" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="Auth" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChatIM-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChatIM-server" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="Gate" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
@@ -1306,16 +1329,6 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="gate" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChatIM-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChatIM-server" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="Gate" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="gate" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ChatIM-server" type="b2602c69:ProjectViewProjectNode" />
@@ -1340,14 +1353,6 @@
             <path>
               <item name="ChatIM-server" type="b2602c69:ProjectViewProjectNode" />
               <item name="ChatIM-server" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="Gate" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChatIM-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChatIM-server" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="Library" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
@@ -1379,16 +1384,6 @@
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChatIM-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChatIM-server" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="Library" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ChatIM-server" type="b2602c69:ProjectViewProjectNode" />
@@ -1399,17 +1394,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChatIM-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChatIM-server" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="Library" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-              <item name="parse" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ChatIM-server" type="b2602c69:ProjectViewProjectNode" />
@@ -1421,6 +1405,21 @@
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="handler" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="ChatIM-server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ChatIM-server" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="Library" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ChatIM-server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ChatIM-server" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="Logic" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -1430,7 +1429,10 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540295011395" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540295978268" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RunDashboard">
@@ -1445,7 +1447,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.AuthServer">
+  <component name="RunManager" selected="Application.GateServer">
     <configuration name="AuthServer" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.github.onlynight.chatim.server.auth.Main" />
       <module name="Auth_main" />
@@ -1476,19 +1478,20 @@
       <option name="presentableId" value="Default" />
       <updated>1540258065660</updated>
       <workItem from="1540258070188" duration="28121000" />
-      <workItem from="1540293752661" duration="1203000" />
+      <workItem from="1540293752661" duration="2178000" />
     </task>
-    <task id="LOCAL-00001" summary="delete workspace.xml">
-      <created>1540289845173</created>
+    <task id="LOCAL-00001" summary="add auth server connection">
+      <created>1540295089324</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1540289845173</updated>
+      <updated>1540295089324</updated>
     </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4407000" />
+    <option name="totallyTimeSpent" value="5382000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1503,7 +1506,7 @@
       <window_info id="UI Designer" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3286334" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286334" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1535,6 +1538,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add auth server connection" />
+    <option name="LAST_COMMIT_MESSAGE" value="add auth server connection" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/.idea/uiDesigner.xml">
@@ -1620,26 +1627,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gate/src/main/java/com/github/onlynight/chatim/server/gate/handler/AuthConnectionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="37" lean-forward="true" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Gate/src/main/java/com/github/onlynight/chatim/server/gate/connection/AuthConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="556">
-          <caret line="36" column="43" lean-forward="true" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gate/src/main/java/com/github/onlynight/chatim/server/gate/config/ConfigReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1667,13 +1654,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Library/src/main/java/com/github/onlynight/chatim/server/handler/DecodeHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gate/src/main/java/com/github/onlynight/chatim/server/gate/GateServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -1688,28 +1668,149 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Auth/src/main/java/com/github/onlynight/chatim/server/auth/AuthServerHandler.java">
+    <entry file="file://$PROJECT_DIR$/Library/src/main/java/com/github/onlynight/chatim/server/handler/DecodeHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="68">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Library/src/main/java/com/github/onlynight/chatim/server/handler/EncodeHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Auth/src/main/java/com/github/onlynight/chatim/server/auth/AuthServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="33" lean-forward="true" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
+        <state relative-caret-position="359">
+          <caret line="37" column="66" selection-start-line="37" selection-start-column="49" selection-end-line="37" selection-end-column="66" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#620#621#0" expanded="true" />
             <element signature="e#652#653#0" expanded="true" />
+            <element signature="e#1162#1581#0" expanded="true" />
             <element signature="e#1580#1581#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Auth/src/main/java/com/github/onlynight/chatim/server/auth/AuthServerHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gate/src/main/java/com/github/onlynight/chatim/server/gate/connection/AuthConnection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="24" column="27" lean-forward="true" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1081#1364#0" expanded="true" />
+            <element signature="e#1363#1364#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.protobuf/protobuf-java/3.6.1/b0782bcd21ad5c52031e74efbc4c3d6a6df96130/protobuf-java-3.6.1-sources.jar!/com/google/protobuf/AbstractMessageLite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="67" column="16" selection-start-line="67" selection-start-column="16" selection-end-line="67" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gate/src/main/java/com/github/onlynight/chatim/server/gate/handler/AuthConnectionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Bundled Protobuf Distribution</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Gate_main|Gate</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.27816093" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Gradle: com.google.protobuf:protobuf-java:3.6.1</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

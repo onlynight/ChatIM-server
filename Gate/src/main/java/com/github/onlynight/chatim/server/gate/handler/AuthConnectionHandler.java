@@ -29,7 +29,9 @@ public class AuthConnectionHandler extends ChannelHandlerAdapter {
     private void handShakeWithGateServer(ChannelHandlerContext ctx) {
         Internal.Handshake handshake = Internal.Handshake.newBuilder()
                 .setFrom(Internal.Handshake.From.GATE).build();
-        ctx.writeAndFlush(handshake);
+        ctx.writeAndFlush(ctx.alloc().buffer().writeBytes(handshake.toByteArray()));
+        ctx.close();
+        System.out.println("handShakeWithGateServer");
     }
 
     public ChannelHandlerContext getAuthChannelHandlerContext() {
