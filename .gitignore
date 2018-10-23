@@ -2,3 +2,4 @@
 /build
 *.class
 .gradle
+/.idea/workspace.xml
