@@ -1,5 +1,7 @@
 /out
 /build
+/*/build
+/*/out
 *.class
 .gradle
 /src/com
