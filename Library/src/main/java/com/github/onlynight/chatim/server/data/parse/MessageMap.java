@@ -15,13 +15,13 @@ public class MessageMap {
     private static HashMap<Integer, Parser> type2ParserMap = new HashMap<>();
     private static HashMap<Class<?>, Integer> class2TypeMap = new HashMap<>();
 
-    public static void register(int messageType, Parser parser, Class messageClass) {
-        type2ParserMap.putIfAbsent(messageType, parser);
-        class2TypeMap.putIfAbsent(messageClass, messageType);
+    public static void register(int protocolType, Parser parser, Class messageClass) {
+        type2ParserMap.putIfAbsent(protocolType, parser);
+        class2TypeMap.putIfAbsent(messageClass, protocolType);
     }
 
-    public static Message getMessage(int messageType, byte[] bytes) throws IOException {
-        Parser parser = type2ParserMap.get(messageType);
+    public static Message getMessage(int protocolType, byte[] bytes) throws IOException {
+        Parser parser = type2ParserMap.get(protocolType);
         if (parser == null) {
             return null;
         }
@@ -29,11 +29,11 @@ public class MessageMap {
         return parser.process(bytes);
     }
 
-    public static Integer getMessageType(Message message) {
-        return getMessageType(message.getClass());
+    public static Integer getProtocolType(Message message) {
+        return getProtocolType(message.getClass());
     }
 
-    public static Integer getMessageType(Class<?> clazz) {
+    public static Integer getProtocolType(Class<?> clazz) {
         return class2TypeMap.get(clazz);
     }
 }

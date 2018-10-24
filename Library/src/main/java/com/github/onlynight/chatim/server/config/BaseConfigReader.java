@@ -33,13 +33,6 @@ public abstract class BaseConfigReader {
     public BaseConfigReader(InputStream configFile) {
         this.configFile = configFile;
         try {
-//            BufferedReader reader = new BufferedReader(new InputStreamReader(configFile));
-//            String line;
-//            StringBuilder sb = new StringBuilder();
-//            while ((line = reader.readLine()) != null) {
-//                sb.append(line);
-//            }
-//            System.out.println(sb.toString());
             parse();
         } catch (IOException | SAXException | ParserConfigurationException | XPathExpressionException e) {
             e.printStackTrace();

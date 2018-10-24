@@ -6,28 +6,27 @@ import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToByteEncoder;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.log4j.Logger;
 
 public class EncodeHandler extends MessageToByteEncoder<Message> {
-    private static final Logger logger = LoggerFactory.getLogger(EncodeHandler.class);
+    private static final Logger logger = Logger.getLogger(EncodeHandler.class);
 
     @Override
     protected void encode(ChannelHandlerContext ctx, Message msg, ByteBuf out) throws Exception {
         byte[] bytes = msg.toByteArray();
 
-        int messageType = MessageMap.getMessageType(msg);
+        int protocolType = MessageMap.getProtocolType(msg);
         int length = bytes.length;
 
         ByteBuf byteBuf = Unpooled.buffer(8 + length);
         byteBuf.writeInt(length);
-        byteBuf.writeInt(messageType);
+        byteBuf.writeInt(protocolType);
         byteBuf.writeBytes(bytes);
 
         out.writeBytes(byteBuf);
 
-        logger.info("GateServer Send Message, remoteAddress: {}, content length {}, ptoNum: {}",
-                ctx.channel().remoteAddress(), length, messageType);
+        logger.info("GateServer Send Message, remoteAddress: " + ctx.channel().remoteAddress() +
+                ", content length " + length + ", ptoNum: " + protocolType);
     }
 
 }

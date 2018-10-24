@@ -29,7 +29,6 @@ public class AuthConnection {
             Bootstrap bootstrap = new Bootstrap();
             bootstrap.group(workGroup)
                     .channel(NioSocketChannel.class)
-                    .option(ChannelOption.SO_BACKLOG, 128)
                     .option(ChannelOption.SO_KEEPALIVE, true)
                     .handler(new ChannelInitializer<SocketChannel>() {
                         @Override
