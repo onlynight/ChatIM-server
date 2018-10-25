@@ -1,27 +1,27 @@
-package com.github.onlynight.chatim.server.data.parse;
+package com.github.onlynight.chatim.server.data.protocol;
 
 import com.google.protobuf.Message;
 
 import java.io.IOException;
 import java.util.HashMap;
 
-public class MessageMap {
+public class ProtocolMap {
 
     @FunctionalInterface
     public interface Parser {
         Message process(byte[] bytes) throws IOException;
     }
 
-    private static HashMap<Integer, Parser> type2ParserMap = new HashMap<>();
-    private static HashMap<Class<?>, Integer> class2TypeMap = new HashMap<>();
+    private static HashMap<Integer, Parser> protocolType2ParserMap = new HashMap<>();
+    private static HashMap<Class<?>, Integer> message2ProtocolTypeMap = new HashMap<>();
 
     public static void register(int protocolType, Parser parser, Class messageClass) {
-        type2ParserMap.putIfAbsent(protocolType, parser);
-        class2TypeMap.putIfAbsent(messageClass, protocolType);
+        protocolType2ParserMap.putIfAbsent(protocolType, parser);
+        message2ProtocolTypeMap.putIfAbsent(messageClass, protocolType);
     }
 
     public static Message getMessage(int protocolType, byte[] bytes) throws IOException {
-        Parser parser = type2ParserMap.get(protocolType);
+        Parser parser = protocolType2ParserMap.get(protocolType);
         if (parser == null) {
             return null;
         }
@@ -34,6 +34,6 @@ public class MessageMap {
     }
 
     public static Integer getProtocolType(Class<?> clazz) {
-        return class2TypeMap.get(clazz);
+        return message2ProtocolTypeMap.get(clazz);
     }
 }
