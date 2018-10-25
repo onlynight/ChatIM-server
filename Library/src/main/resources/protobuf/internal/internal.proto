@@ -1,15 +1,26 @@
 option java_package = "com.github.onlynight.chatim.server.data.internal";
 option java_outer_classname = "Internal";
 
-message Handshake {
+enum ProtocolType {
+    HANDSHAKE = 1;
+}
 
-    enum ServerType {
-        GATE = 1;
-        AUTH = 2;
-        LOGIC = 3;
-    }
+enum ServerType {
+    GATE = 1;
+    AUTH = 2;
+    LOGIC = 3;
+}
+
+message Handshake {
 
     required ServerType from = 1;
     required ServerType to = 2;
 
+}
+
+message Transport {
+    required ServerType from = 1;
+    required ServerType to = 2;
+    required ProtocolType protocolType = 3;
+    required bytes data = 4;
 }

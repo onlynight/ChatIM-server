@@ -9,6 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/Auth" />
+            <option value="$PROJECT_DIR$/Client" />
             <option value="$PROJECT_DIR$/Gate" />
             <option value="$PROJECT_DIR$/Library" />
             <option value="$PROJECT_DIR$/Logic" />

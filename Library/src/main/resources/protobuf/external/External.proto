@@ -1,0 +1,6 @@
+option java_package = "com.github.onlynight.chatim.server.data.external";
+option java_outer_classname = "External";
+
+message Login {
+    required string userId = 1;
+}

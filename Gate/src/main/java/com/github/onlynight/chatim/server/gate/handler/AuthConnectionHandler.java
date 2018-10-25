@@ -43,8 +43,8 @@ public class AuthConnectionHandler extends ChannelHandlerAdapter {
 
     private void handShakeWithAuthServer(ChannelHandlerContext ctx) {
         Internal.Handshake handshake = Internal.Handshake.newBuilder()
-                .setFrom(Internal.Handshake.ServerType.GATE)
-                .setTo(Internal.Handshake.ServerType.AUTH).build();
+                .setFrom(Internal.ServerType.GATE)
+                .setTo(Internal.ServerType.AUTH).build();
         ctx.writeAndFlush(handshake);
     }
 

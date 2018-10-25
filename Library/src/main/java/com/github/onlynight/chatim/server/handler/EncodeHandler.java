@@ -1,5 +1,6 @@
 package com.github.onlynight.chatim.server.handler;
 
+import com.github.onlynight.chatim.server.data.internal.Internal;
 import com.github.onlynight.chatim.server.data.protocol.ProtocolMap;
 import com.google.protobuf.Message;
 import io.netty.buffer.ByteBuf;
@@ -15,12 +16,12 @@ public class EncodeHandler extends MessageToByteEncoder<Message> {
     protected void encode(ChannelHandlerContext ctx, Message msg, ByteBuf out) throws Exception {
         byte[] bytes = msg.toByteArray();
 
-        int protocolType = ProtocolMap.getProtocolType(msg);
+        Internal.ProtocolType protocolType = ProtocolMap.getProtocolType(msg);
         int length = bytes.length;
 
         ByteBuf byteBuf = Unpooled.buffer(8 + length);
         byteBuf.writeInt(length);
-        byteBuf.writeInt(protocolType);
+        byteBuf.writeInt(protocolType.getNumber());
         byteBuf.writeBytes(bytes);
 
         out.writeBytes(byteBuf);
