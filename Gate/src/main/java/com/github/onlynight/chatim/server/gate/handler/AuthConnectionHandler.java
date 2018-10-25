@@ -1,11 +1,14 @@
 package com.github.onlynight.chatim.server.gate.handler;
 
 import com.github.onlynight.chatim.server.data.internal.Internal;
-import io.netty.buffer.ByteBuf;
+import com.google.protobuf.Message;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
+import org.apache.log4j.Logger;
 
 public class AuthConnectionHandler extends ChannelHandlerAdapter {
+
+    private Logger logger = Logger.getLogger(AuthConnectionHandler.class);
 
     private ChannelHandlerContext authChannelHandlerContext;
 
@@ -24,18 +27,24 @@ public class AuthConnectionHandler extends ChannelHandlerAdapter {
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         authChannelHandlerContext = ctx;
-        handShakeWithGateServer(ctx);
+        handShakeWithAuthServer(ctx);
     }
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-        Internal.Handshake handshake = (Internal.Handshake) msg;
-        System.out.println(handshake);
+        Message message = (Message) msg;
+        if (message instanceof Internal.Handshake) {
+            logger.info("HANDSHAKE from " + ((Internal.Handshake) message).getFrom()
+                    + " to " + ((Internal.Handshake) message).getTo());
+        } else {
+            // TODO: 2018/10/24 handle message
+        }
     }
 
-    private void handShakeWithGateServer(ChannelHandlerContext ctx) {
+    private void handShakeWithAuthServer(ChannelHandlerContext ctx) {
         Internal.Handshake handshake = Internal.Handshake.newBuilder()
-                .setFrom(Internal.Handshake.From.GATE).build();
+                .setFrom(Internal.Handshake.ServerType.GATE)
+                .setTo(Internal.Handshake.ServerType.AUTH).build();
         ctx.writeAndFlush(handshake);
     }
 

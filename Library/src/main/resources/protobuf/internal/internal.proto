@@ -3,12 +3,13 @@ option java_outer_classname = "Internal";
 
 message Handshake {
 
-    enum From {
+    enum ServerType {
         GATE = 1;
         AUTH = 2;
         LOGIC = 3;
     }
 
-    required From from = 1;
+    required ServerType from = 1;
+    required ServerType to = 2;
 
 }
