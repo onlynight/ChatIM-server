@@ -1,6 +1,5 @@
 package com.github.onlynight.chatim.server.data.protocol;
 
-import com.github.onlynight.chatim.server.data.internal.Internal;
 import com.google.protobuf.Message;
 
 import java.io.IOException;
@@ -23,6 +22,15 @@ public class ProtocolMap {
 
     public static Message getMessage(Protocol.ProtocolType protocolType, byte[] bytes) throws IOException {
         Parser parser = protocolType2ParserMap.get(protocolType);
+        if (parser == null) {
+            return null;
+        }
+
+        return parser.process(bytes);
+    }
+
+    public static Message getMessage(int protocolType, byte[] bytes) throws IOException {
+        Parser parser = protocolType2ParserMap.get(Protocol.ProtocolType.valueOf(protocolType));
         if (parser == null) {
             return null;
         }

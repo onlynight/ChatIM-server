@@ -14,40 +14,58 @@ public final class Protocol {
   public enum ProtocolType
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>HANDSHAKE = 1;</code>
+     * <code>LOGIN = 100;</code>
      */
-    HANDSHAKE(0, 1),
+    LOGIN(0, 100),
     /**
-     * <code>LOGIN = 2;</code>
+     * <code>TEXT_MESSAGE = 101;</code>
      */
-    LOGIN(1, 2),
+    TEXT_MESSAGE(1, 101),
     /**
-     * <code>TEXT_MESSAGE = 3;</code>
+     * <code>I_HANDSHAKE = 200;</code>
      */
-    TEXT_MESSAGE(2, 3),
+    I_HANDSHAKE(2, 200),
+    /**
+     * <code>I_LOGIN = 201;</code>
+     */
+    I_LOGIN(3, 201),
+    /**
+     * <code>I_LOGOUT = 202;</code>
+     */
+    I_LOGOUT(4, 202),
     ;
 
     /**
-     * <code>HANDSHAKE = 1;</code>
+     * <code>LOGIN = 100;</code>
      */
-    public static final int HANDSHAKE_VALUE = 1;
+    public static final int LOGIN_VALUE = 100;
     /**
-     * <code>LOGIN = 2;</code>
+     * <code>TEXT_MESSAGE = 101;</code>
      */
-    public static final int LOGIN_VALUE = 2;
+    public static final int TEXT_MESSAGE_VALUE = 101;
     /**
-     * <code>TEXT_MESSAGE = 3;</code>
+     * <code>I_HANDSHAKE = 200;</code>
      */
-    public static final int TEXT_MESSAGE_VALUE = 3;
+    public static final int I_HANDSHAKE_VALUE = 200;
+    /**
+     * <code>I_LOGIN = 201;</code>
+     */
+    public static final int I_LOGIN_VALUE = 201;
+    /**
+     * <code>I_LOGOUT = 202;</code>
+     */
+    public static final int I_LOGOUT_VALUE = 202;
 
 
     public final int getNumber() { return value; }
 
     public static ProtocolType valueOf(int value) {
       switch (value) {
-        case 1: return HANDSHAKE;
-        case 2: return LOGIN;
-        case 3: return TEXT_MESSAGE;
+        case 100: return LOGIN;
+        case 101: return TEXT_MESSAGE;
+        case 200: return I_HANDSHAKE;
+        case 201: return I_LOGIN;
+        case 202: return I_LOGOUT;
         default: return null;
       }
     }
@@ -108,10 +126,11 @@ public final class Protocol {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n!protocol_type/protocol_type.proto*:\n\014P" +
-      "rotocolType\022\r\n\tHANDSHAKE\020\001\022\t\n\005LOGIN\020\002\022\020\n" +
-      "\014TEXT_MESSAGE\020\003B<\n0com.github.onlynight." +
-      "chatim.server.data.protocolB\010Protocol"
+      "\n!protocol_type/protocol_type.proto*Z\n\014P" +
+      "rotocolType\022\t\n\005LOGIN\020d\022\020\n\014TEXT_MESSAGE\020e" +
+      "\022\020\n\013I_HANDSHAKE\020\310\001\022\014\n\007I_LOGIN\020\311\001\022\r\n\010I_LO" +
+      "GOUT\020\312\001B<\n0com.github.onlynight.chatim.s" +
+      "erver.data.protocolB\010Protocol"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

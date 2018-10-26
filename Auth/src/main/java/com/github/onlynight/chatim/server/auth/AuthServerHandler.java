@@ -7,7 +7,11 @@ import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 import org.apache.log4j.Logger;
 
+import java.util.concurrent.ConcurrentHashMap;
+
 public class AuthServerHandler extends ChannelHandlerAdapter {
+
+    private ConcurrentHashMap<String, Long> onlineClients = new ConcurrentHashMap<>();
 
     private Logger logger = Logger.getLogger(AuthServerHandler.class);
 
@@ -18,11 +22,23 @@ public class AuthServerHandler extends ChannelHandlerAdapter {
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         Message message = (Message) msg;
+        logger.info("message class is " + message.getClass());
         if (message instanceof Internal.Handshake) {
             logger.info("HANDSHAKE from " + ((Internal.Handshake) message).getFrom()
                     + " to " + ((Internal.Handshake) message).getTo());
-            GateConnectionHandler.getInstance().setChannelHandlerContext(ctx);
-            handShakeWithGateServer(GateConnectionHandler.getInstance().getChannelHandlerContext());
+            if (((Internal.Handshake) message).getFrom() == Internal.ServerType.GATE) {
+                GateConnectionHandler.getInstance().setChannelHandlerContext(ctx);
+                handShakeWithServer(GateConnectionHandler.getInstance().getChannelHandlerContext(),
+                        Internal.ServerType.GATE);
+            }
+        } else if (message instanceof Internal.ILogin) {
+            logger.info("<" + ((Internal.ILogin) message).getUserId() + ","
+                    + ((Internal.ILogin) message).getConnectionId() + ">" + " user login pass from GATE");
+            onlineClients.put(((Internal.ILogin) message).getUserId(), ((Internal.ILogin) message).getConnectionId());
+        } else if (message instanceof Internal.ILogout) {
+            onlineClients.remove(((Internal.ILogout) message).getUserId());
+            logger.info("<" + ((Internal.ILogout) message).getUserId() + ","
+                    + ((Internal.ILogout) message).getConnectionId() + ">" + " user logout pass from GATE");
         } else {
             // TODO: 2018/10/24 handle message
         }
@@ -34,10 +50,10 @@ public class AuthServerHandler extends ChannelHandlerAdapter {
         ctx.close();
     }
 
-    private void handShakeWithGateServer(ChannelHandlerContext ctx) {
+    private void handShakeWithServer(ChannelHandlerContext ctx, Internal.ServerType to) {
         Internal.Handshake handshake = Internal.Handshake.newBuilder()
                 .setFrom(Internal.ServerType.AUTH)
-                .setTo(Internal.ServerType.GATE).build();
+                .setTo(to).build();
         ctx.writeAndFlush(handshake);
     }
 

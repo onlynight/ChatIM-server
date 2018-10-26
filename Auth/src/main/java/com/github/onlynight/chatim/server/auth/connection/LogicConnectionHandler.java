@@ -1,0 +1,57 @@
+package com.github.onlynight.chatim.server.auth.connection;
+
+import com.github.onlynight.chatim.server.data.internal.Internal;
+import com.google.protobuf.Message;
+import io.netty.channel.ChannelHandlerAdapter;
+import io.netty.channel.ChannelHandlerContext;
+import org.apache.log4j.Logger;
+
+public class LogicConnectionHandler extends ChannelHandlerAdapter {
+
+    private Logger logger = Logger.getLogger(LogicConnectionHandler.class);
+
+    private ChannelHandlerContext channelHandlerContext;
+
+    private static LogicConnectionHandler instance;
+
+    public static LogicConnectionHandler getInstance() {
+        if (instance == null) {
+            instance = new LogicConnectionHandler();
+        }
+        return instance;
+    }
+
+    public ChannelHandlerContext getChannelHandlerContext() {
+        return channelHandlerContext;
+    }
+
+    @Override
+    public void channelActive(ChannelHandlerContext ctx) throws Exception {
+        channelHandlerContext = ctx;
+        handShakeWithAuthServer(ctx);
+    }
+
+    @Override
+    public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+        Message message = (Message) msg;
+        if (message instanceof Internal.Handshake) {
+            logger.info("HANDSHAKE from " + ((Internal.Handshake) message).getFrom()
+                    + " to " + ((Internal.Handshake) message).getTo());
+        }
+    }
+
+    @Override
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+        cause.printStackTrace();
+        ctx.close();
+    }
+
+    private void handShakeWithAuthServer(ChannelHandlerContext ctx) {
+        Internal.Handshake handshake = Internal.Handshake.newBuilder()
+                .setFrom(Internal.ServerType.AUTH)
+                .setTo(Internal.ServerType.LOGIC)
+                .build();
+        ctx.writeAndFlush(handshake);
+    }
+
+}

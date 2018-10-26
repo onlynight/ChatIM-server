@@ -21,22 +21,21 @@ public class Main {
         }).start();
 
         new Thread(() -> {
-            while (true) {
-                try {
-                    Thread.sleep(500);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
-                External.TextMessage message = External.TextMessage.newBuilder()
-                        .setFrom("1")
-                        .setTo("2")
-                        .setMsg("hello world").build();
-                ChannelHandlerContext ctx = ClientHandler.getInstance().getChannelHandlerContext();
-                if (ctx != null) {
-                    ctx.writeAndFlush(message);
-                }
+            ChannelHandlerContext ctx = ClientHandler.getInstance().getChannelHandlerContext();
+            while (ctx == null) {
+                ctx = ClientHandler.getInstance().getChannelHandlerContext();
             }
+
+            External.Login login = External.Login.newBuilder()
+                    .setUserId("1")
+                    .build();
+            ctx.writeAndFlush(login);
+
+            External.TextMessage message = External.TextMessage.newBuilder()
+                    .setFrom("1")
+                    .setTo("2")
+                    .setMsg("hello world").build();
+            ctx.writeAndFlush(message);
         }).start();
     }
 

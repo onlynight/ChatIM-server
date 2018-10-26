@@ -1,6 +1,7 @@
 package com.github.onlynight.chatim.server.logic;
 
 import com.github.onlynight.chatim.server.data.internal.Internal;
+import com.github.onlynight.chatim.server.logic.connection.AuthServerConnectionHandler;
 import com.github.onlynight.chatim.server.logic.connection.GateServerConnectionHandler;
 import com.google.protobuf.Message;
 import io.netty.channel.ChannelHandlerAdapter;
@@ -21,9 +22,15 @@ public class LogicServerHandler extends ChannelHandlerAdapter {
         if (message instanceof Internal.Handshake) {
             logger.info("HANDSHAKE from " + ((Internal.Handshake) message).getFrom()
                     + " to " + ((Internal.Handshake) message).getTo());
-            GateServerConnectionHandler.getInstance().setChannelHandlerContext(ctx);
-            handShakeWithGateServer(GateServerConnectionHandler.getInstance().getChannelHandlerContext());
-        } else {
+            if (((Internal.Handshake) message).getFrom() == Internal.ServerType.GATE) {
+                GateServerConnectionHandler.getInstance().setChannelHandlerContext(ctx);
+                handShakeWithServer(GateServerConnectionHandler.getInstance().getChannelHandlerContext(),
+                        Internal.ServerType.GATE);
+            } else if (((Internal.Handshake) message).getFrom() == Internal.ServerType.AUTH) {
+                AuthServerConnectionHandler.getInstance().setChannelHandlerContext(ctx);
+                handShakeWithServer(AuthServerConnectionHandler.getInstance().getChannelHandlerContext(),
+                        Internal.ServerType.AUTH);
+            }
         }
     }
 
@@ -33,10 +40,10 @@ public class LogicServerHandler extends ChannelHandlerAdapter {
         ctx.close();
     }
 
-    private void handShakeWithGateServer(ChannelHandlerContext ctx) {
+    private void handShakeWithServer(ChannelHandlerContext ctx, Internal.ServerType to) {
         Internal.Handshake handshake = Internal.Handshake.newBuilder()
                 .setFrom(Internal.ServerType.LOGIC)
-                .setTo(Internal.ServerType.GATE).build();
+                .setTo(to).build();
         ctx.writeAndFlush(handshake);
     }
 

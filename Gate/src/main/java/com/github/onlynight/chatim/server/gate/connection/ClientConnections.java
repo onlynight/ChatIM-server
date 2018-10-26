@@ -10,7 +10,8 @@ public class ClientConnections {
 
     private static final AtomicLong connectionIdGenerator = new AtomicLong(0);
 
-    private static AttributeKey<Long> CONNECTION_ID = AttributeKey.newInstance("connection_id");
+    public static AttributeKey<Long> CONNECTION_ID = AttributeKey.newInstance("connection_id");
+    public static AttributeKey<String> USER_ID = AttributeKey.newInstance("user_id");
 
     private static ConcurrentHashMap<Long, ChannelHandlerContext> connections = new ConcurrentHashMap<>();
     private static ConcurrentHashMap<String, Long> userConnectionMap = new ConcurrentHashMap<>();
@@ -41,6 +42,10 @@ public class ClientConnections {
     public static void unbindUser2Connection(String userId) {
         Long connectionId = userConnectionMap.remove(userId);
         removeConnection(connectionId);
+    }
+
+    public static int connectionLength() {
+        return connections.size();
     }
 
 }

@@ -5,6 +5,10 @@ message Login {
     required string userId = 1;
 }
 
+message Logout {
+    required string userId = 1;
+}
+
 message TextMessage {
 
     required string from = 1;

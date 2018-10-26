@@ -1,6 +1,5 @@
 package com.github.onlynight.chatim.server.handler;
 
-import com.github.onlynight.chatim.server.data.internal.Internal;
 import com.github.onlynight.chatim.server.data.protocol.Protocol;
 import com.github.onlynight.chatim.server.data.protocol.ProtocolMap;
 import com.google.protobuf.Message;
@@ -18,6 +17,7 @@ public class EncodeHandler extends MessageToByteEncoder<Message> {
         byte[] bytes = msg.toByteArray();
 
         Protocol.ProtocolType protocolType = ProtocolMap.getProtocolType(msg);
+//        logger.info("message class is " + msg.getClass() + " protocol type is " + protocolType);
         int length = bytes.length;
 
         ByteBuf byteBuf = Unpooled.buffer(8 + length);

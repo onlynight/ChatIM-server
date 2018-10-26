@@ -16,9 +16,16 @@ message Handshake {
 
 }
 
-message Transport {
+message ILogin {
     required ServerType from = 1;
     required ServerType to = 2;
-    required ProtocolType protocolType = 3;
-    required bytes data = 4;
+    required string userId = 3;
+    required int64 connection_id = 4;
+}
+
+message ILogout {
+    required ServerType from = 1;
+    required ServerType to = 2;
+    required string userId = 3;
+    required int64 connection_id = 4;
 }
