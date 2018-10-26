@@ -1,0 +1,9 @@
+option java_package = "com.github.onlynight.chatim.server.data.protocol";
+option java_outer_classname = "Protocol";
+
+enum ProtocolType {
+    HANDSHAKE = 1;
+
+    LOGIN = 2;
+    TEXT_MESSAGE = 3;
+}

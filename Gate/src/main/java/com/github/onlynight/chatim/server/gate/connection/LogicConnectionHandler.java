@@ -1,4 +1,4 @@
-package com.github.onlynight.chatim.server.gate.handler;
+package com.github.onlynight.chatim.server.gate.connection;
 
 import com.github.onlynight.chatim.server.data.internal.Internal;
 import com.google.protobuf.Message;
@@ -6,28 +6,28 @@ import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 import org.apache.log4j.Logger;
 
-public class AuthConnectionHandler extends ChannelHandlerAdapter {
+public class LogicConnectionHandler extends ChannelHandlerAdapter {
 
-    private Logger logger = Logger.getLogger(AuthConnectionHandler.class);
+    private Logger logger = Logger.getLogger(LogicConnectionHandler.class);
 
-    private ChannelHandlerContext authChannelHandlerContext;
+    private ChannelHandlerContext channelHandlerContext;
 
-    private static AuthConnectionHandler instance;
+    private static LogicConnectionHandler instance;
 
-    public static AuthConnectionHandler getInstance() {
+    public static LogicConnectionHandler getInstance() {
         if (instance == null) {
-            instance = new AuthConnectionHandler();
+            instance = new LogicConnectionHandler();
         }
         return instance;
     }
 
-    private AuthConnectionHandler() {
+    private LogicConnectionHandler() {
     }
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
-        authChannelHandlerContext = ctx;
-        handShakeWithAuthServer(ctx);
+        channelHandlerContext = ctx;
+        handShakeWithLogicServer(ctx);
     }
 
     @Override
@@ -41,14 +41,21 @@ public class AuthConnectionHandler extends ChannelHandlerAdapter {
         }
     }
 
-    private void handShakeWithAuthServer(ChannelHandlerContext ctx) {
+    @Override
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+        cause.printStackTrace();
+        ctx.close();
+    }
+
+    private void handShakeWithLogicServer(ChannelHandlerContext ctx) {
         Internal.Handshake handshake = Internal.Handshake.newBuilder()
                 .setFrom(Internal.ServerType.GATE)
-                .setTo(Internal.ServerType.AUTH).build();
+                .setTo(Internal.ServerType.LOGIC)
+                .build();
         ctx.writeAndFlush(handshake);
     }
 
-    public ChannelHandlerContext getAuthChannelHandlerContext() {
-        return authChannelHandlerContext;
+    public ChannelHandlerContext getChannelHandlerContext() {
+        return channelHandlerContext;
     }
 }

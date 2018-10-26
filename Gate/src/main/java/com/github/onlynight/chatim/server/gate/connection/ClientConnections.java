@@ -1,4 +1,4 @@
-package com.github.onlynight.chatim.server.gate;
+package com.github.onlynight.chatim.server.gate.connection;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.util.AttributeKey;
@@ -6,7 +6,7 @@ import io.netty.util.AttributeKey;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
-class ClientConnections {
+public class ClientConnections {
 
     private static final AtomicLong connectionIdGenerator = new AtomicLong(0);
 

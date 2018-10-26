@@ -3,24 +3,24 @@ package com.github.onlynight.chatim.server.gate.connection;
 import com.github.onlynight.chatim.server.connection.BaseConnection;
 import io.netty.channel.ChannelHandlerAdapter;
 
-public class AuthConnection extends BaseConnection {
+public class LogicConnection extends BaseConnection {
 
-    private static AuthConnection instance;
+    private static LogicConnection instance;
 
-    public static AuthConnection getInstance() {
+    public static LogicConnection getInstance() {
         if (instance == null) {
-            instance = new AuthConnection();
+            instance = new LogicConnection();
         }
         return instance;
     }
 
-    private AuthConnection() {
+    private LogicConnection() {
         super();
     }
 
     @Override
     protected ChannelHandlerAdapter getChannelHandler() {
-        return AuthConnectionHandler.getInstance();
+        return LogicConnectionHandler.getInstance();
     }
 
 }

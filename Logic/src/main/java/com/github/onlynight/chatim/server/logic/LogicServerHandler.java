@@ -1,15 +1,15 @@
-package com.github.onlynight.chatim.server.auth;
+package com.github.onlynight.chatim.server.logic;
 
-import com.github.onlynight.chatim.server.auth.connection.GateConnectionHandler;
 import com.github.onlynight.chatim.server.data.internal.Internal;
+import com.github.onlynight.chatim.server.logic.connection.GateServerConnectionHandler;
 import com.google.protobuf.Message;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 import org.apache.log4j.Logger;
 
-public class AuthServerHandler extends ChannelHandlerAdapter {
+public class LogicServerHandler extends ChannelHandlerAdapter {
 
-    private Logger logger = Logger.getLogger(AuthServerHandler.class);
+    private Logger logger = Logger.getLogger(LogicServerHandler.class);
 
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
@@ -21,10 +21,9 @@ public class AuthServerHandler extends ChannelHandlerAdapter {
         if (message instanceof Internal.Handshake) {
             logger.info("HANDSHAKE from " + ((Internal.Handshake) message).getFrom()
                     + " to " + ((Internal.Handshake) message).getTo());
-            GateConnectionHandler.getInstance().setChannelHandlerContext(ctx);
-            handShakeWithGateServer(GateConnectionHandler.getInstance().getChannelHandlerContext());
+            GateServerConnectionHandler.getInstance().setChannelHandlerContext(ctx);
+            handShakeWithGateServer(GateServerConnectionHandler.getInstance().getChannelHandlerContext());
         } else {
-            // TODO: 2018/10/24 handle message
         }
     }
 
@@ -36,7 +35,7 @@ public class AuthServerHandler extends ChannelHandlerAdapter {
 
     private void handShakeWithGateServer(ChannelHandlerContext ctx) {
         Internal.Handshake handshake = Internal.Handshake.newBuilder()
-                .setFrom(Internal.ServerType.AUTH)
+                .setFrom(Internal.ServerType.LOGIC)
                 .setTo(Internal.ServerType.GATE).build();
         ctx.writeAndFlush(handshake);
     }

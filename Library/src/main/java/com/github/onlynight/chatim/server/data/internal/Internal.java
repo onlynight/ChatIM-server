@@ -9,79 +9,6 @@ public final class Internal {
       com.google.protobuf.ExtensionRegistry registry) {
   }
   /**
-   * Protobuf enum {@code ProtocolType}
-   */
-  public enum ProtocolType
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>HANDSHAKE = 1;</code>
-     */
-    HANDSHAKE(0, 1),
-    ;
-
-    /**
-     * <code>HANDSHAKE = 1;</code>
-     */
-    public static final int HANDSHAKE_VALUE = 1;
-
-
-    public final int getNumber() { return value; }
-
-    public static ProtocolType valueOf(int value) {
-      switch (value) {
-        case 1: return HANDSHAKE;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<ProtocolType>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static com.google.protobuf.Internal.EnumLiteMap<ProtocolType>
-        internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<ProtocolType>() {
-            public ProtocolType findValueByNumber(int number) {
-              return ProtocolType.valueOf(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      return getDescriptor().getValues().get(index);
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.github.onlynight.chatim.server.data.internal.Internal.getDescriptor().getEnumTypes().get(0);
-    }
-
-    private static final ProtocolType[] VALUES = values();
-
-    public static ProtocolType valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int index;
-    private final int value;
-
-    private ProtocolType(int index, int value) {
-      this.index = index;
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:ProtocolType)
-  }
-
-  /**
    * Protobuf enum {@code ServerType}
    */
   public enum ServerType
@@ -147,7 +74,7 @@ public final class Internal {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return com.github.onlynight.chatim.server.data.internal.Internal.getDescriptor().getEnumTypes().get(1);
+      return com.github.onlynight.chatim.server.data.internal.Internal.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final ServerType[] VALUES = values();
@@ -714,7 +641,7 @@ public final class Internal {
     /**
      * <code>required .ProtocolType protocolType = 3;</code>
      */
-    com.github.onlynight.chatim.server.data.internal.Internal.ProtocolType getProtocolType();
+    com.github.onlynight.chatim.server.data.protocol.Protocol.ProtocolType getProtocolType();
 
     // required bytes data = 4;
     /**
@@ -801,7 +728,7 @@ public final class Internal {
             }
             case 24: {
               int rawValue = input.readEnum();
-              com.github.onlynight.chatim.server.data.internal.Internal.ProtocolType value = com.github.onlynight.chatim.server.data.internal.Internal.ProtocolType.valueOf(rawValue);
+              com.github.onlynight.chatim.server.data.protocol.Protocol.ProtocolType value = com.github.onlynight.chatim.server.data.protocol.Protocol.ProtocolType.valueOf(rawValue);
               if (value == null) {
                 unknownFields.mergeVarintField(3, rawValue);
               } else {
@@ -889,7 +816,7 @@ public final class Internal {
 
     // required .ProtocolType protocolType = 3;
     public static final int PROTOCOLTYPE_FIELD_NUMBER = 3;
-    private com.github.onlynight.chatim.server.data.internal.Internal.ProtocolType protocolType_;
+    private com.github.onlynight.chatim.server.data.protocol.Protocol.ProtocolType protocolType_;
     /**
      * <code>required .ProtocolType protocolType = 3;</code>
      */
@@ -899,7 +826,7 @@ public final class Internal {
     /**
      * <code>required .ProtocolType protocolType = 3;</code>
      */
-    public com.github.onlynight.chatim.server.data.internal.Internal.ProtocolType getProtocolType() {
+    public com.github.onlynight.chatim.server.data.protocol.Protocol.ProtocolType getProtocolType() {
       return protocolType_;
     }
 
@@ -922,7 +849,7 @@ public final class Internal {
     private void initFields() {
       from_ = com.github.onlynight.chatim.server.data.internal.Internal.ServerType.GATE;
       to_ = com.github.onlynight.chatim.server.data.internal.Internal.ServerType.GATE;
-      protocolType_ = com.github.onlynight.chatim.server.data.internal.Internal.ProtocolType.HANDSHAKE;
+      protocolType_ = com.github.onlynight.chatim.server.data.protocol.Protocol.ProtocolType.HANDSHAKE;
       data_ = com.google.protobuf.ByteString.EMPTY;
     }
     private byte memoizedIsInitialized = -1;
@@ -1110,7 +1037,7 @@ public final class Internal {
         bitField0_ = (bitField0_ & ~0x00000001);
         to_ = com.github.onlynight.chatim.server.data.internal.Internal.ServerType.GATE;
         bitField0_ = (bitField0_ & ~0x00000002);
-        protocolType_ = com.github.onlynight.chatim.server.data.internal.Internal.ProtocolType.HANDSHAKE;
+        protocolType_ = com.github.onlynight.chatim.server.data.protocol.Protocol.ProtocolType.HANDSHAKE;
         bitField0_ = (bitField0_ & ~0x00000004);
         data_ = com.google.protobuf.ByteString.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -1302,7 +1229,7 @@ public final class Internal {
       }
 
       // required .ProtocolType protocolType = 3;
-      private com.github.onlynight.chatim.server.data.internal.Internal.ProtocolType protocolType_ = com.github.onlynight.chatim.server.data.internal.Internal.ProtocolType.HANDSHAKE;
+      private com.github.onlynight.chatim.server.data.protocol.Protocol.ProtocolType protocolType_ = com.github.onlynight.chatim.server.data.protocol.Protocol.ProtocolType.HANDSHAKE;
       /**
        * <code>required .ProtocolType protocolType = 3;</code>
        */
@@ -1312,13 +1239,13 @@ public final class Internal {
       /**
        * <code>required .ProtocolType protocolType = 3;</code>
        */
-      public com.github.onlynight.chatim.server.data.internal.Internal.ProtocolType getProtocolType() {
+      public com.github.onlynight.chatim.server.data.protocol.Protocol.ProtocolType getProtocolType() {
         return protocolType_;
       }
       /**
        * <code>required .ProtocolType protocolType = 3;</code>
        */
-      public Builder setProtocolType(com.github.onlynight.chatim.server.data.internal.Internal.ProtocolType value) {
+      public Builder setProtocolType(com.github.onlynight.chatim.server.data.protocol.Protocol.ProtocolType value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -1332,7 +1259,7 @@ public final class Internal {
        */
       public Builder clearProtocolType() {
         bitField0_ = (bitField0_ & ~0x00000004);
-        protocolType_ = com.github.onlynight.chatim.server.data.internal.Internal.ProtocolType.HANDSHAKE;
+        protocolType_ = com.github.onlynight.chatim.server.data.protocol.Protocol.ProtocolType.HANDSHAKE;
         onChanged();
         return this;
       }
@@ -1403,15 +1330,15 @@ public final class Internal {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\027internal/internal.proto\"?\n\tHandshake\022\031" +
-      "\n\004from\030\001 \002(\0162\013.ServerType\022\027\n\002to\030\002 \002(\0162\013." +
-      "ServerType\"r\n\tTransport\022\031\n\004from\030\001 \002(\0162\013." +
-      "ServerType\022\027\n\002to\030\002 \002(\0162\013.ServerType\022#\n\014p" +
-      "rotocolType\030\003 \002(\0162\r.ProtocolType\022\014\n\004data" +
-      "\030\004 \002(\014*\035\n\014ProtocolType\022\r\n\tHANDSHAKE\020\001*+\n" +
-      "\nServerType\022\010\n\004GATE\020\001\022\010\n\004AUTH\020\002\022\t\n\005LOGIC" +
-      "\020\003B<\n0com.github.onlynight.chatim.server" +
-      ".data.internalB\010Internal"
+      "\n\027internal/internal.proto\032!protocol_type" +
+      "/protocol_type.proto\"?\n\tHandshake\022\031\n\004fro" +
+      "m\030\001 \002(\0162\013.ServerType\022\027\n\002to\030\002 \002(\0162\013.Serve" +
+      "rType\"r\n\tTransport\022\031\n\004from\030\001 \002(\0162\013.Serve" +
+      "rType\022\027\n\002to\030\002 \002(\0162\013.ServerType\022#\n\014protoc" +
+      "olType\030\003 \002(\0162\r.ProtocolType\022\014\n\004data\030\004 \002(" +
+      "\014*+\n\nServerType\022\010\n\004GATE\020\001\022\010\n\004AUTH\020\002\022\t\n\005L" +
+      "OGIC\020\003B<\n0com.github.onlynight.chatim.se" +
+      "rver.data.internalB\010InternalP\000"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -1436,6 +1363,7 @@ public final class Internal {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.github.onlynight.chatim.server.data.protocol.Protocol.getDescriptor(),
         }, assigner);
   }
 

@@ -1,9 +1,7 @@
+import public "protocol_type/protocol_type.proto";
+
 option java_package = "com.github.onlynight.chatim.server.data.internal";
 option java_outer_classname = "Internal";
-
-enum ProtocolType {
-    HANDSHAKE = 1;
-}
 
 enum ServerType {
     GATE = 1;

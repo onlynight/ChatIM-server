@@ -1,23 +1,19 @@
-package com.github.onlynight.chatim.clientdemo;
+package com.github.onlynight.chatim.server.logic.connection;
 
-import com.github.onlynight.chatim.server.data.external.External;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 
-public class ClientHandler extends ChannelHandlerAdapter {
+public class AuthServerConnectionHandler extends ChannelHandlerAdapter {
 
     private ChannelHandlerContext channelHandlerContext;
 
-    private static ClientHandler instance;
+    private static AuthServerConnectionHandler instance;
 
-    public static ClientHandler getInstance() {
+    public static AuthServerConnectionHandler getInstance() {
         if (instance == null) {
-            instance = new ClientHandler();
+            instance = new AuthServerConnectionHandler();
         }
         return instance;
-    }
-
-    private ClientHandler() {
     }
 
     @Override
@@ -29,8 +25,13 @@ public class ClientHandler extends ChannelHandlerAdapter {
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
     }
 
+    @Override
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+        cause.printStackTrace();
+        ctx.close();
+    }
+
     public ChannelHandlerContext getChannelHandlerContext() {
         return channelHandlerContext;
     }
-
 }

@@ -13,15 +13,15 @@ public class ProtocolMap {
         Message process(byte[] bytes) throws IOException;
     }
 
-    private static HashMap<Internal.ProtocolType, Parser> protocolType2ParserMap = new HashMap<>();
-    private static HashMap<Class<?>, Internal.ProtocolType> message2ProtocolTypeMap = new HashMap<>();
+    private static HashMap<Protocol.ProtocolType, Parser> protocolType2ParserMap = new HashMap<>();
+    private static HashMap<Class<?>, Protocol.ProtocolType> message2ProtocolTypeMap = new HashMap<>();
 
-    public static void register(Internal.ProtocolType protocolType, Parser parser, Class messageClass) {
+    public static void register(Protocol.ProtocolType protocolType, Parser parser, Class messageClass) {
         protocolType2ParserMap.putIfAbsent(protocolType, parser);
         message2ProtocolTypeMap.putIfAbsent(messageClass, protocolType);
     }
 
-    public static Message getMessage(Internal.ProtocolType protocolType, byte[] bytes) throws IOException {
+    public static Message getMessage(Protocol.ProtocolType protocolType, byte[] bytes) throws IOException {
         Parser parser = protocolType2ParserMap.get(protocolType);
         if (parser == null) {
             return null;
@@ -30,11 +30,11 @@ public class ProtocolMap {
         return parser.process(bytes);
     }
 
-    public static Internal.ProtocolType getProtocolType(Message message) {
+    public static Protocol.ProtocolType getProtocolType(Message message) {
         return getProtocolType(message.getClass());
     }
 
-    public static Internal.ProtocolType getProtocolType(Class<?> clazz) {
+    public static Protocol.ProtocolType getProtocolType(Class<?> clazz) {
         return message2ProtocolTypeMap.get(clazz);
     }
 }

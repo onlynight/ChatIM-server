@@ -1,32 +1,41 @@
-package com.github.onlynight.chatim.clientdemo;
+package com.github.onlynight.chatim.server.connection;
 
 import com.github.onlynight.chatim.server.handler.DecodeHandler;
 import com.github.onlynight.chatim.server.handler.EncodeHandler;
+import com.github.onlynight.chatim.server.utils.TextUtils;
 import io.netty.bootstrap.Bootstrap;
-import io.netty.channel.ChannelFuture;
-import io.netty.channel.ChannelInitializer;
-import io.netty.channel.ChannelOption;
-import io.netty.channel.EventLoopGroup;
+import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 
-public class Client {
+public abstract class BaseConnection {
 
     private String host;
     private int port;
 
-    public Client(String host, int port) {
+    public BaseConnection() {
+    }
+
+    public BaseConnection(String host, int port) {
         this.host = host;
         this.port = port;
     }
 
-    public void run() {
-        EventLoopGroup workerGroup = new NioEventLoopGroup();
+    public void setServerAddress(String host, int port) {
+        this.host = host;
+        this.port = port;
+    }
+
+    public void connect() {
+        if (TextUtils.isEmpty(host) || port == 0) {
+            throw new RuntimeException("connection host or port is null");
+        }
+        EventLoopGroup workGroup = new NioEventLoopGroup();
 
         try {
             Bootstrap bootstrap = new Bootstrap();
-            bootstrap.group(workerGroup)
+            bootstrap.group(workGroup)
                     .channel(NioSocketChannel.class)
                     .option(ChannelOption.SO_KEEPALIVE, true)
                     .handler(new ChannelInitializer<SocketChannel>() {
@@ -35,16 +44,19 @@ public class Client {
                             ch.pipeline()
                                     .addLast(new EncodeHandler())
                                     .addLast(new DecodeHandler())
-                                    .addLast(ClientHandler.getInstance());
+                                    .addLast(getChannelHandler());
                         }
                     });
+
             ChannelFuture f = bootstrap.connect(host, port).sync();
             f.channel().closeFuture().sync();
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {
-            workerGroup.shutdownGracefully();
+            workGroup.shutdownGracefully();
         }
     }
+
+    protected abstract ChannelHandlerAdapter getChannelHandler();
 
 }

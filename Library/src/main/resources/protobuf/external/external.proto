@@ -4,3 +4,11 @@ option java_outer_classname = "External";
 message Login {
     required string userId = 1;
 }
+
+message TextMessage {
+
+    required string from = 1;
+    required string to = 2;
+    required string msg = 3;
+
+}

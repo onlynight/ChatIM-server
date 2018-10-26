@@ -1,6 +1,7 @@
 package com.github.onlynight.chatim.server.handler;
 
 import com.github.onlynight.chatim.server.data.internal.Internal;
+import com.github.onlynight.chatim.server.data.protocol.Protocol;
 import com.github.onlynight.chatim.server.data.protocol.ProtocolMap;
 import com.google.protobuf.Message;
 import io.netty.buffer.ByteBuf;
@@ -16,7 +17,7 @@ public class EncodeHandler extends MessageToByteEncoder<Message> {
     protected void encode(ChannelHandlerContext ctx, Message msg, ByteBuf out) throws Exception {
         byte[] bytes = msg.toByteArray();
 
-        Internal.ProtocolType protocolType = ProtocolMap.getProtocolType(msg);
+        Protocol.ProtocolType protocolType = ProtocolMap.getProtocolType(msg);
         int length = bytes.length;
 
         ByteBuf byteBuf = Unpooled.buffer(8 + length);
