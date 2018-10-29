@@ -9,7 +9,7 @@ enum ServerType {
     LOGIC = 3;
 }
 
-message Handshake {
+message IHandshake {
 
     required ServerType from = 1;
     required ServerType to = 2;
@@ -28,4 +28,15 @@ message ILogout {
     required ServerType to = 2;
     required string userId = 3;
     required int64 connection_id = 4;
+}
+
+message ITextMessage {
+
+    required ServerType from = 1;
+    required ServerType to = 2;
+    required string fromUserId = 3;
+    required string toUserId = 4;
+    required string msg = 5;
+    required uint64 timestamp = 6;
+
 }

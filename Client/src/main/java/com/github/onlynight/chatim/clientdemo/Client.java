@@ -16,9 +16,12 @@ public class Client {
     private String host;
     private int port;
 
+    private ClientHandler clientHandler;
+
     public Client(String host, int port) {
         this.host = host;
         this.port = port;
+        this.clientHandler = new ClientHandler();
     }
 
     public void run() {
@@ -35,7 +38,7 @@ public class Client {
                             ch.pipeline()
                                     .addLast(new EncodeHandler())
                                     .addLast(new DecodeHandler())
-                                    .addLast(ClientHandler.getInstance());
+                                    .addLast(clientHandler);
                         }
                     });
             ChannelFuture f = bootstrap.connect(host, port).sync();
@@ -47,4 +50,7 @@ public class Client {
         }
     }
 
+    public ClientHandler getClientHandler() {
+        return clientHandler;
+    }
 }

@@ -2,15 +2,15 @@ package com.github.onlynight.chatim.server.logic.connection;
 
 import io.netty.channel.ChannelHandlerContext;
 
-public class GateServerConnectionHandler {
+public class AuthConnectionHandler {
 
     private ChannelHandlerContext channelHandlerContext;
 
-    private static GateServerConnectionHandler instance;
+    private static AuthConnectionHandler instance;
 
-    public static GateServerConnectionHandler getInstance() {
+    public static AuthConnectionHandler getInstance() {
         if (instance == null) {
-            instance = new GateServerConnectionHandler();
+            instance = new AuthConnectionHandler();
         }
         return instance;
     }
@@ -22,5 +22,5 @@ public class GateServerConnectionHandler {
     public void setChannelHandlerContext(ChannelHandlerContext channelHandlerContext) {
         this.channelHandlerContext = channelHandlerContext;
     }
-
+    
 }

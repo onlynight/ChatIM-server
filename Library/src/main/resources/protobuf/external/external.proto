@@ -14,5 +14,6 @@ message TextMessage {
     required string from = 1;
     required string to = 2;
     required string msg = 3;
+    required uint64 timestamp = 4;
 
 }

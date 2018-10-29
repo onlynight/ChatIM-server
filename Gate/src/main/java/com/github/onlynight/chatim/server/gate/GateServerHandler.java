@@ -4,6 +4,7 @@ import com.github.onlynight.chatim.server.data.external.External;
 import com.github.onlynight.chatim.server.data.internal.Internal;
 import com.github.onlynight.chatim.server.gate.connection.AuthConnectionHandler;
 import com.github.onlynight.chatim.server.gate.connection.ClientConnections;
+import com.github.onlynight.chatim.server.gate.connection.LogicConnectionHandler;
 import com.google.protobuf.Message;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
@@ -24,6 +25,9 @@ public class GateServerHandler extends ChannelHandlerAdapter {
         ClientConnections.removeConnection(ctx);
         logger.info("client num is : " + ClientConnections.connectionLength());
 
+        ClientConnections.unbindUser2Connection(ctx.attr(ClientConnections.USER_ID).get());
+        ClientConnections.removeConnection(ctx);
+
         Internal.ILogout iLogout = Internal.ILogout.newBuilder()
                 .setFrom(Internal.ServerType.GATE)
                 .setTo(Internal.ServerType.LOGIC)
@@ -38,9 +42,7 @@ public class GateServerHandler extends ChannelHandlerAdapter {
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         Message message = (Message) msg;
-        if (message instanceof External.TextMessage) {
-            logger.info(((External.TextMessage) message).getMsg());
-        } else if (message instanceof External.Login) {
+        if (message instanceof External.Login) {
             logger.info("user : " + ((External.Login) message).getUserId() + " request login");
 
             ctx.attr(ClientConnections.USER_ID).set(((External.Login) message).getUserId());
@@ -51,8 +53,25 @@ public class GateServerHandler extends ChannelHandlerAdapter {
                     .setConnectionId(ctx.attr(ClientConnections.CONNECTION_ID).get())
                     .build();
 
+            ClientConnections.bindUser2Connection(((External.Login) message).getUserId(),
+                    ctx.attr(ClientConnections.CONNECTION_ID).get());
+
             AuthConnectionHandler.getInstance()
                     .getChannelHandlerContext().writeAndFlush(iLogin);
+        } else if (message instanceof External.TextMessage) {
+            logger.info("GateServer RECEIVE message from USER <" + ((External.TextMessage) message).getFrom() + ">");
+
+            Internal.ITextMessage textMessage = Internal.ITextMessage.newBuilder()
+                    .setFrom(Internal.ServerType.GATE)
+                    .setTo(Internal.ServerType.LOGIC)
+                    .setFromUserId(((External.TextMessage) message).getFrom())
+                    .setToUserId(((External.TextMessage) message).getTo())
+                    .setMsg(((External.TextMessage) message).getMsg())
+                    .setTimestamp(((External.TextMessage) message).getTimestamp())
+                    .build();
+
+            LogicConnectionHandler.getInstance()
+                    .getChannelHandlerContext().writeAndFlush(textMessage);
         }
     }
 

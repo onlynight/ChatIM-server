@@ -33,9 +33,9 @@ public class LogicConnectionHandler extends ChannelHandlerAdapter {
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         Message message = (Message) msg;
-        if (message instanceof Internal.Handshake) {
-            logger.info("HANDSHAKE from " + ((Internal.Handshake) message).getFrom()
-                    + " to " + ((Internal.Handshake) message).getTo());
+        if (message instanceof Internal.IHandshake) {
+            logger.info("HANDSHAKE from " + ((Internal.IHandshake) message).getFrom()
+                    + " to " + ((Internal.IHandshake) message).getTo());
         } else {
             // TODO: 2018/10/24 handle message
         }
@@ -48,7 +48,7 @@ public class LogicConnectionHandler extends ChannelHandlerAdapter {
     }
 
     private void handShakeWithLogicServer(ChannelHandlerContext ctx) {
-        Internal.Handshake handshake = Internal.Handshake.newBuilder()
+        Internal.IHandshake handshake = Internal.IHandshake.newBuilder()
                 .setFrom(Internal.ServerType.GATE)
                 .setTo(Internal.ServerType.LOGIC)
                 .build();

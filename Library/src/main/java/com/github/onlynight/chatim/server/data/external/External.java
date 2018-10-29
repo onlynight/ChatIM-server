@@ -1013,6 +1013,16 @@ public final class External {
      */
     com.google.protobuf.ByteString
         getMsgBytes();
+
+    // required uint64 timestamp = 4;
+    /**
+     * <code>required uint64 timestamp = 4;</code>
+     */
+    boolean hasTimestamp();
+    /**
+     * <code>required uint64 timestamp = 4;</code>
+     */
+    long getTimestamp();
   }
   /**
    * Protobuf type {@code TextMessage}
@@ -1078,6 +1088,11 @@ public final class External {
             case 26: {
               bitField0_ |= 0x00000004;
               msg_ = input.readBytes();
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000008;
+              timestamp_ = input.readUInt64();
               break;
             }
           }
@@ -1249,10 +1264,27 @@ public final class External {
       }
     }
 
+    // required uint64 timestamp = 4;
+    public static final int TIMESTAMP_FIELD_NUMBER = 4;
+    private long timestamp_;
+    /**
+     * <code>required uint64 timestamp = 4;</code>
+     */
+    public boolean hasTimestamp() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>required uint64 timestamp = 4;</code>
+     */
+    public long getTimestamp() {
+      return timestamp_;
+    }
+
     private void initFields() {
       from_ = "";
       to_ = "";
       msg_ = "";
+      timestamp_ = 0L;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -1271,6 +1303,10 @@ public final class External {
         memoizedIsInitialized = 0;
         return false;
       }
+      if (!hasTimestamp()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
       memoizedIsInitialized = 1;
       return true;
     }
@@ -1286,6 +1322,9 @@ public final class External {
       }
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeBytes(3, getMsgBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeUInt64(4, timestamp_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1307,6 +1346,10 @@ public final class External {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(3, getMsgBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(4, timestamp_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -1430,6 +1473,8 @@ public final class External {
         bitField0_ = (bitField0_ & ~0x00000002);
         msg_ = "";
         bitField0_ = (bitField0_ & ~0x00000004);
+        timestamp_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -1470,6 +1515,10 @@ public final class External {
           to_bitField0_ |= 0x00000004;
         }
         result.msg_ = msg_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.timestamp_ = timestamp_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1501,6 +1550,9 @@ public final class External {
           msg_ = other.msg_;
           onChanged();
         }
+        if (other.hasTimestamp()) {
+          setTimestamp(other.getTimestamp());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
       }
@@ -1515,6 +1567,10 @@ public final class External {
           return false;
         }
         if (!hasMsg()) {
+          
+          return false;
+        }
+        if (!hasTimestamp()) {
           
           return false;
         }
@@ -1762,6 +1818,39 @@ public final class External {
         return this;
       }
 
+      // required uint64 timestamp = 4;
+      private long timestamp_ ;
+      /**
+       * <code>required uint64 timestamp = 4;</code>
+       */
+      public boolean hasTimestamp() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>required uint64 timestamp = 4;</code>
+       */
+      public long getTimestamp() {
+        return timestamp_;
+      }
+      /**
+       * <code>required uint64 timestamp = 4;</code>
+       */
+      public Builder setTimestamp(long value) {
+        bitField0_ |= 0x00000008;
+        timestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required uint64 timestamp = 4;</code>
+       */
+      public Builder clearTimestamp() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:TextMessage)
     }
 
@@ -1798,10 +1887,11 @@ public final class External {
   static {
     java.lang.String[] descriptorData = {
       "\n\027external/external.proto\"\027\n\005Login\022\016\n\006us" +
-      "erId\030\001 \002(\t\"\030\n\006Logout\022\016\n\006userId\030\001 \002(\t\"4\n\013" +
+      "erId\030\001 \002(\t\"\030\n\006Logout\022\016\n\006userId\030\001 \002(\t\"G\n\013" +
       "TextMessage\022\014\n\004from\030\001 \002(\t\022\n\n\002to\030\002 \002(\t\022\013\n" +
-      "\003msg\030\003 \002(\tB<\n0com.github.onlynight.chati" +
-      "m.server.data.externalB\010External"
+      "\003msg\030\003 \002(\t\022\021\n\ttimestamp\030\004 \002(\004B<\n0com.git" +
+      "hub.onlynight.chatim.server.data.externa" +
+      "lB\010External"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -1825,7 +1915,7 @@ public final class External {
           internal_static_TextMessage_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_TextMessage_descriptor,
-              new java.lang.String[] { "From", "To", "Msg", });
+              new java.lang.String[] { "From", "To", "Msg", "Timestamp", });
           return null;
         }
       };

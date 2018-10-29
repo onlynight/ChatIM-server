@@ -27,7 +27,7 @@ public class EncodeHandler extends MessageToByteEncoder<Message> {
 
         out.writeBytes(byteBuf);
 
-        logger.info("GateServer Send Message, remoteAddress: " + ctx.channel().remoteAddress() +
+        logger.info("server Send Message, remoteAddress: " + ctx.channel().remoteAddress() +
                 ", content length " + length + ", ptoNum: " + protocolType);
     }
 

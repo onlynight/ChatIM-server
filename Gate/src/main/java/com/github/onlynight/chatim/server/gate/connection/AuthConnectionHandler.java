@@ -1,5 +1,6 @@
 package com.github.onlynight.chatim.server.gate.connection;
 
+import com.github.onlynight.chatim.server.data.external.External;
 import com.github.onlynight.chatim.server.data.internal.Internal;
 import com.google.protobuf.Message;
 import io.netty.channel.ChannelHandlerAdapter;
@@ -33,16 +34,31 @@ public class AuthConnectionHandler extends ChannelHandlerAdapter {
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         Message message = (Message) msg;
-        if (message instanceof Internal.Handshake) {
-            logger.info("HANDSHAKE from " + ((Internal.Handshake) message).getFrom()
-                    + " to " + ((Internal.Handshake) message).getTo());
-        } else {
-            // TODO: 2018/10/24 handle message
+        if (message instanceof Internal.IHandshake) {
+            logger.info("HANDSHAKE from " + ((Internal.IHandshake) message).getFrom()
+                    + " to " + ((Internal.IHandshake) message).getTo());
+        } else if (message instanceof Internal.ITextMessage) {
+            logger.info("SEND msg to <" + ((Internal.ITextMessage) message).getToUserId() + ">");
+
+            String to = ((Internal.ITextMessage) message).getToUserId();
+
+            ChannelHandlerContext clientCtx = ClientConnections.getConnection(to);
+            if (clientCtx != null) {
+                External.TextMessage temp = External.TextMessage.newBuilder()
+                        .setFrom(((Internal.ITextMessage) message).getFromUserId())
+                        .setTo(((Internal.ITextMessage) message).getToUserId())
+                        .setMsg(((Internal.ITextMessage) message).getMsg())
+                        .setTimestamp(((Internal.ITextMessage) message).getTimestamp())
+                        .build();
+                clientCtx.writeAndFlush(temp);
+            } else {
+                logger.info("USER <" + ((Internal.ITextMessage) message).getToUserId() + "> not online");
+            }
         }
     }
 
     private void handShakeWithAuthServer(ChannelHandlerContext ctx) {
-        Internal.Handshake handshake = Internal.Handshake.newBuilder()
+        Internal.IHandshake handshake = Internal.IHandshake.newBuilder()
                 .setFrom(Internal.ServerType.GATE)
                 .setTo(Internal.ServerType.AUTH).build();
         ctx.writeAndFlush(handshake);

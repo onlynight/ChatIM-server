@@ -26,6 +26,12 @@ public class ClientConnections {
         return connections.get(connectionId);
     }
 
+    public static ChannelHandlerContext getConnection(String userId) {
+        Long connectionId = userConnectionMap.get(userId);
+        System.out.println(connectionId);
+        return connections.get(connectionId);
+    }
+
     public static void removeConnection(long connectionId) {
         connections.remove(connectionId);
     }
@@ -41,7 +47,7 @@ public class ClientConnections {
 
     public static void unbindUser2Connection(String userId) {
         Long connectionId = userConnectionMap.remove(userId);
-        removeConnection(connectionId);
+//        removeConnection(connectionId);
     }
 
     public static int connectionLength() {

@@ -11,7 +11,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class AuthServerHandler extends ChannelHandlerAdapter {
 
-    private ConcurrentHashMap<String, Long> onlineClients = new ConcurrentHashMap<>();
+    private static ConcurrentHashMap<String, Long> onlineClients = new ConcurrentHashMap<>();
 
     private Logger logger = Logger.getLogger(AuthServerHandler.class);
 
@@ -23,10 +23,10 @@ public class AuthServerHandler extends ChannelHandlerAdapter {
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         Message message = (Message) msg;
         logger.info("message class is " + message.getClass());
-        if (message instanceof Internal.Handshake) {
-            logger.info("HANDSHAKE from " + ((Internal.Handshake) message).getFrom()
-                    + " to " + ((Internal.Handshake) message).getTo());
-            if (((Internal.Handshake) message).getFrom() == Internal.ServerType.GATE) {
+        if (message instanceof Internal.IHandshake) {
+            logger.info("HANDSHAKE from " + ((Internal.IHandshake) message).getFrom()
+                    + " to " + ((Internal.IHandshake) message).getTo());
+            if (((Internal.IHandshake) message).getFrom() == Internal.ServerType.GATE) {
                 GateConnectionHandler.getInstance().setChannelHandlerContext(ctx);
                 handShakeWithServer(GateConnectionHandler.getInstance().getChannelHandlerContext(),
                         Internal.ServerType.GATE);
@@ -35,10 +35,29 @@ public class AuthServerHandler extends ChannelHandlerAdapter {
             logger.info("<" + ((Internal.ILogin) message).getUserId() + ","
                     + ((Internal.ILogin) message).getConnectionId() + ">" + " user login pass from GATE");
             onlineClients.put(((Internal.ILogin) message).getUserId(), ((Internal.ILogin) message).getConnectionId());
+            logger.info("online user size : " + onlineClients.size());
         } else if (message instanceof Internal.ILogout) {
             onlineClients.remove(((Internal.ILogout) message).getUserId());
             logger.info("<" + ((Internal.ILogout) message).getUserId() + ","
                     + ((Internal.ILogout) message).getConnectionId() + ">" + " user logout pass from GATE");
+            logger.info("online user size : " + onlineClients.size());
+        } else if (message instanceof Internal.ITextMessage) {
+            logger.info("RECEIVE from LOGIC server USER <" + ((Internal.ITextMessage) message).getFromUserId()
+                    + "> SEND to USER <" + ((Internal.ITextMessage) message).getToUserId() + ">");
+            String toUserId = ((Internal.ITextMessage) message).getToUserId();
+            if (!onlineClients.containsKey(toUserId)) {
+                Internal.ITextMessage temp = Internal.ITextMessage.newBuilder()
+                        .setFrom(Internal.ServerType.AUTH)
+                        .setTo(Internal.ServerType.GATE)
+                        .setFromUserId(((Internal.ITextMessage) message).getFromUserId())
+                        .setToUserId(((Internal.ITextMessage) message).getToUserId())
+                        .setMsg(((Internal.ITextMessage) message).getMsg())
+                        .setTimestamp(((Internal.ITextMessage) message).getTimestamp())
+                        .build();
+                GateConnectionHandler.getInstance().getChannelHandlerContext().writeAndFlush(temp);
+            } else {
+                logger.info("USER <" + toUserId + "> not online");
+            }
         } else {
             // TODO: 2018/10/24 handle message
         }
@@ -51,10 +70,13 @@ public class AuthServerHandler extends ChannelHandlerAdapter {
     }
 
     private void handShakeWithServer(ChannelHandlerContext ctx, Internal.ServerType to) {
-        Internal.Handshake handshake = Internal.Handshake.newBuilder()
+        Internal.IHandshake handshake = Internal.IHandshake.newBuilder()
                 .setFrom(Internal.ServerType.AUTH)
                 .setTo(to).build();
         ctx.writeAndFlush(handshake);
     }
 
+    public static ConcurrentHashMap<String, Long> getOnlineClients() {
+        return onlineClients;
+    }
 }

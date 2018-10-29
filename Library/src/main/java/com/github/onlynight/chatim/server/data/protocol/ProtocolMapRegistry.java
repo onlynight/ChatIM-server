@@ -12,14 +12,18 @@ public class ProtocolMapRegistry {
         ProtocolMap.register(Protocol.ProtocolType.LOGIN,
                 External.Login::parseFrom, External.Login.class);
 
+
         ProtocolMap.register(Protocol.ProtocolType.I_HANDSHAKE,
-                Internal.Handshake::parseFrom, Internal.Handshake.class);
+                Internal.IHandshake::parseFrom, Internal.IHandshake.class);
 
         ProtocolMap.register(Protocol.ProtocolType.I_LOGIN,
                 Internal.ILogin::parseFrom, Internal.ILogin.class);
 
         ProtocolMap.register(Protocol.ProtocolType.I_LOGOUT,
                 Internal.ILogout::parseFrom, Internal.ILogout.class);
+
+        ProtocolMap.register(Protocol.ProtocolType.I_TEXT_MESSAGE,
+                Internal.ITextMessage::parseFrom, Internal.ITextMessage.class);
     }
 
 }

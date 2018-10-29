@@ -45,7 +45,7 @@ public class DecodeHandler extends ByteToMessageDecoder {
             byte[] body = byteBuf.array();
             Message message = ProtocolMap.getMessage(protocolType, body);
             out.add(message);
-            logger.info("Gate server receive message: length " + length + " , protocolType "
+            logger.info("server receive message: length " + length + " , protocolType "
                     + Protocol.ProtocolType.valueOf(protocolType));
         } catch (Exception e) {
             e.printStackTrace();

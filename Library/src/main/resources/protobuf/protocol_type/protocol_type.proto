@@ -8,4 +8,5 @@ enum ProtocolType {
     I_HANDSHAKE = 200;
     I_LOGIN = 201;
     I_LOGOUT = 202;
+    I_TEXT_MESSAGE = 203;
 }

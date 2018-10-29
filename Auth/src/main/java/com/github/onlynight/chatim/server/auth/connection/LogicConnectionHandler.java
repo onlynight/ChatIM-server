@@ -34,9 +34,17 @@ public class LogicConnectionHandler extends ChannelHandlerAdapter {
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         Message message = (Message) msg;
-        if (message instanceof Internal.Handshake) {
-            logger.info("HANDSHAKE from " + ((Internal.Handshake) message).getFrom()
-                    + " to " + ((Internal.Handshake) message).getTo());
+        if (message instanceof Internal.IHandshake) {
+            logger.info("HANDSHAKE from " + ((Internal.IHandshake) message).getFrom()
+                    + " to " + ((Internal.IHandshake) message).getTo());
+        } else if (message instanceof Internal.ITextMessage) {
+            logger.info("USER <" + ((Internal.ITextMessage) message).getFromUserId() + ">"
+                    + " SEND message to USER <" + ((Internal.ITextMessage) message).getToUserId() + ">");
+
+            // check to user is online
+
+            GateConnectionHandler.getInstance()
+                    .getChannelHandlerContext().writeAndFlush(message);
         }
     }
 
@@ -47,7 +55,7 @@ public class LogicConnectionHandler extends ChannelHandlerAdapter {
     }
 
     private void handShakeWithAuthServer(ChannelHandlerContext ctx) {
-        Internal.Handshake handshake = Internal.Handshake.newBuilder()
+        Internal.IHandshake handshake = Internal.IHandshake.newBuilder()
                 .setFrom(Internal.ServerType.AUTH)
                 .setTo(Internal.ServerType.LOGIC)
                 .build();

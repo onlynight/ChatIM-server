@@ -1,8 +1,8 @@
 package com.github.onlynight.chatim.server.logic;
 
 import com.github.onlynight.chatim.server.data.internal.Internal;
-import com.github.onlynight.chatim.server.logic.connection.AuthServerConnectionHandler;
-import com.github.onlynight.chatim.server.logic.connection.GateServerConnectionHandler;
+import com.github.onlynight.chatim.server.logic.connection.AuthConnectionHandler;
+import com.github.onlynight.chatim.server.logic.connection.GateConnectionHandler;
 import com.google.protobuf.Message;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
@@ -19,18 +19,32 @@ public class LogicServerHandler extends ChannelHandlerAdapter {
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         Message message = (Message) msg;
-        if (message instanceof Internal.Handshake) {
-            logger.info("HANDSHAKE from " + ((Internal.Handshake) message).getFrom()
-                    + " to " + ((Internal.Handshake) message).getTo());
-            if (((Internal.Handshake) message).getFrom() == Internal.ServerType.GATE) {
-                GateServerConnectionHandler.getInstance().setChannelHandlerContext(ctx);
-                handShakeWithServer(GateServerConnectionHandler.getInstance().getChannelHandlerContext(),
+        if (message instanceof Internal.IHandshake) {
+            logger.info("HANDSHAKE from " + ((Internal.IHandshake) message).getFrom()
+                    + " to " + ((Internal.IHandshake) message).getTo());
+            if (((Internal.IHandshake) message).getFrom() == Internal.ServerType.GATE) {
+                GateConnectionHandler.getInstance().setChannelHandlerContext(ctx);
+                handShakeWithServer(GateConnectionHandler.getInstance().getChannelHandlerContext(),
                         Internal.ServerType.GATE);
-            } else if (((Internal.Handshake) message).getFrom() == Internal.ServerType.AUTH) {
-                AuthServerConnectionHandler.getInstance().setChannelHandlerContext(ctx);
-                handShakeWithServer(AuthServerConnectionHandler.getInstance().getChannelHandlerContext(),
+            } else if (((Internal.IHandshake) message).getFrom() == Internal.ServerType.AUTH) {
+                AuthConnectionHandler.getInstance().setChannelHandlerContext(ctx);
+                handShakeWithServer(AuthConnectionHandler.getInstance().getChannelHandlerContext(),
                         Internal.ServerType.AUTH);
             }
+        } else if (message instanceof Internal.ITextMessage) {
+            logger.info("USER <" + ((Internal.ITextMessage) message).getFromUserId() + ">"
+                    + " SEND message to USER <" + ((Internal.ITextMessage) message).getToUserId() + ">");
+
+            Internal.ITextMessage temp = Internal.ITextMessage.newBuilder()
+                    .setFrom(Internal.ServerType.LOGIC)
+                    .setTo(Internal.ServerType.AUTH)
+                    .setFromUserId(((Internal.ITextMessage) message).getFromUserId())
+                    .setToUserId(((Internal.ITextMessage) message).getToUserId())
+                    .setMsg(((Internal.ITextMessage) message).getMsg())
+                    .setTimestamp(((Internal.ITextMessage) message).getTimestamp())
+                    .build();
+            AuthConnectionHandler.getInstance()
+                    .getChannelHandlerContext().writeAndFlush(temp);
         }
     }
 
@@ -41,7 +55,7 @@ public class LogicServerHandler extends ChannelHandlerAdapter {
     }
 
     private void handShakeWithServer(ChannelHandlerContext ctx, Internal.ServerType to) {
-        Internal.Handshake handshake = Internal.Handshake.newBuilder()
+        Internal.IHandshake handshake = Internal.IHandshake.newBuilder()
                 .setFrom(Internal.ServerType.LOGIC)
                 .setTo(to).build();
         ctx.writeAndFlush(handshake);

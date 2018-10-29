@@ -99,7 +99,7 @@ public final class Internal {
     // @@protoc_insertion_point(enum_scope:ServerType)
   }
 
-  public interface HandshakeOrBuilder
+  public interface IHandshakeOrBuilder
       extends com.google.protobuf.MessageOrBuilder {
 
     // required .ServerType from = 1;
@@ -123,24 +123,24 @@ public final class Internal {
     com.github.onlynight.chatim.server.data.internal.Internal.ServerType getTo();
   }
   /**
-   * Protobuf type {@code Handshake}
+   * Protobuf type {@code IHandshake}
    */
-  public static final class Handshake extends
+  public static final class IHandshake extends
       com.google.protobuf.GeneratedMessage
-      implements HandshakeOrBuilder {
-    // Use Handshake.newBuilder() to construct.
-    private Handshake(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      implements IHandshakeOrBuilder {
+    // Use IHandshake.newBuilder() to construct.
+    private IHandshake(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
       this.unknownFields = builder.getUnknownFields();
     }
-    private Handshake(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+    private IHandshake(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
 
-    private static final Handshake defaultInstance;
-    public static Handshake getDefaultInstance() {
+    private static final IHandshake defaultInstance;
+    public static IHandshake getDefaultInstance() {
       return defaultInstance;
     }
 
-    public Handshake getDefaultInstanceForType() {
+    public IHandshake getDefaultInstanceForType() {
       return defaultInstance;
     }
 
@@ -150,7 +150,7 @@ public final class Internal {
         getUnknownFields() {
       return this.unknownFields;
     }
-    private Handshake(
+    private IHandshake(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -209,28 +209,28 @@ public final class Internal {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.github.onlynight.chatim.server.data.internal.Internal.internal_static_Handshake_descriptor;
+      return com.github.onlynight.chatim.server.data.internal.Internal.internal_static_IHandshake_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.github.onlynight.chatim.server.data.internal.Internal.internal_static_Handshake_fieldAccessorTable
+      return com.github.onlynight.chatim.server.data.internal.Internal.internal_static_IHandshake_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.github.onlynight.chatim.server.data.internal.Internal.Handshake.class, com.github.onlynight.chatim.server.data.internal.Internal.Handshake.Builder.class);
+              com.github.onlynight.chatim.server.data.internal.Internal.IHandshake.class, com.github.onlynight.chatim.server.data.internal.Internal.IHandshake.Builder.class);
     }
 
-    public static com.google.protobuf.Parser<Handshake> PARSER =
-        new com.google.protobuf.AbstractParser<Handshake>() {
-      public Handshake parsePartialFrom(
+    public static com.google.protobuf.Parser<IHandshake> PARSER =
+        new com.google.protobuf.AbstractParser<IHandshake>() {
+      public IHandshake parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Handshake(input, extensionRegistry);
+        return new IHandshake(input, extensionRegistry);
       }
     };
 
     @java.lang.Override
-    public com.google.protobuf.Parser<Handshake> getParserForType() {
+    public com.google.protobuf.Parser<IHandshake> getParserForType() {
       return PARSER;
     }
 
@@ -326,53 +326,53 @@ public final class Internal {
       return super.writeReplace();
     }
 
-    public static com.github.onlynight.chatim.server.data.internal.Internal.Handshake parseFrom(
+    public static com.github.onlynight.chatim.server.data.internal.Internal.IHandshake parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.github.onlynight.chatim.server.data.internal.Internal.Handshake parseFrom(
+    public static com.github.onlynight.chatim.server.data.internal.Internal.IHandshake parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.github.onlynight.chatim.server.data.internal.Internal.Handshake parseFrom(byte[] data)
+    public static com.github.onlynight.chatim.server.data.internal.Internal.IHandshake parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.github.onlynight.chatim.server.data.internal.Internal.Handshake parseFrom(
+    public static com.github.onlynight.chatim.server.data.internal.Internal.IHandshake parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.github.onlynight.chatim.server.data.internal.Internal.Handshake parseFrom(java.io.InputStream input)
+    public static com.github.onlynight.chatim.server.data.internal.Internal.IHandshake parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.github.onlynight.chatim.server.data.internal.Internal.Handshake parseFrom(
+    public static com.github.onlynight.chatim.server.data.internal.Internal.IHandshake parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.github.onlynight.chatim.server.data.internal.Internal.Handshake parseDelimitedFrom(java.io.InputStream input)
+    public static com.github.onlynight.chatim.server.data.internal.Internal.IHandshake parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.github.onlynight.chatim.server.data.internal.Internal.Handshake parseDelimitedFrom(
+    public static com.github.onlynight.chatim.server.data.internal.Internal.IHandshake parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.github.onlynight.chatim.server.data.internal.Internal.Handshake parseFrom(
+    public static com.github.onlynight.chatim.server.data.internal.Internal.IHandshake parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.github.onlynight.chatim.server.data.internal.Internal.Handshake parseFrom(
+    public static com.github.onlynight.chatim.server.data.internal.Internal.IHandshake parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -381,7 +381,7 @@ public final class Internal {
 
     public static Builder newBuilder() { return Builder.create(); }
     public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder(com.github.onlynight.chatim.server.data.internal.Internal.Handshake prototype) {
+    public static Builder newBuilder(com.github.onlynight.chatim.server.data.internal.Internal.IHandshake prototype) {
       return newBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() { return newBuilder(this); }
@@ -393,24 +393,24 @@ public final class Internal {
       return builder;
     }
     /**
-     * Protobuf type {@code Handshake}
+     * Protobuf type {@code IHandshake}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder>
-       implements com.github.onlynight.chatim.server.data.internal.Internal.HandshakeOrBuilder {
+       implements com.github.onlynight.chatim.server.data.internal.Internal.IHandshakeOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.github.onlynight.chatim.server.data.internal.Internal.internal_static_Handshake_descriptor;
+        return com.github.onlynight.chatim.server.data.internal.Internal.internal_static_IHandshake_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.github.onlynight.chatim.server.data.internal.Internal.internal_static_Handshake_fieldAccessorTable
+        return com.github.onlynight.chatim.server.data.internal.Internal.internal_static_IHandshake_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.github.onlynight.chatim.server.data.internal.Internal.Handshake.class, com.github.onlynight.chatim.server.data.internal.Internal.Handshake.Builder.class);
+                com.github.onlynight.chatim.server.data.internal.Internal.IHandshake.class, com.github.onlynight.chatim.server.data.internal.Internal.IHandshake.Builder.class);
       }
 
-      // Construct using com.github.onlynight.chatim.server.data.internal.Internal.Handshake.newBuilder()
+      // Construct using com.github.onlynight.chatim.server.data.internal.Internal.IHandshake.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -443,23 +443,23 @@ public final class Internal {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.github.onlynight.chatim.server.data.internal.Internal.internal_static_Handshake_descriptor;
+        return com.github.onlynight.chatim.server.data.internal.Internal.internal_static_IHandshake_descriptor;
       }
 
-      public com.github.onlynight.chatim.server.data.internal.Internal.Handshake getDefaultInstanceForType() {
-        return com.github.onlynight.chatim.server.data.internal.Internal.Handshake.getDefaultInstance();
+      public com.github.onlynight.chatim.server.data.internal.Internal.IHandshake getDefaultInstanceForType() {
+        return com.github.onlynight.chatim.server.data.internal.Internal.IHandshake.getDefaultInstance();
       }
 
-      public com.github.onlynight.chatim.server.data.internal.Internal.Handshake build() {
-        com.github.onlynight.chatim.server.data.internal.Internal.Handshake result = buildPartial();
+      public com.github.onlynight.chatim.server.data.internal.Internal.IHandshake build() {
+        com.github.onlynight.chatim.server.data.internal.Internal.IHandshake result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.github.onlynight.chatim.server.data.internal.Internal.Handshake buildPartial() {
-        com.github.onlynight.chatim.server.data.internal.Internal.Handshake result = new com.github.onlynight.chatim.server.data.internal.Internal.Handshake(this);
+      public com.github.onlynight.chatim.server.data.internal.Internal.IHandshake buildPartial() {
+        com.github.onlynight.chatim.server.data.internal.Internal.IHandshake result = new com.github.onlynight.chatim.server.data.internal.Internal.IHandshake(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
@@ -476,16 +476,16 @@ public final class Internal {
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.github.onlynight.chatim.server.data.internal.Internal.Handshake) {
-          return mergeFrom((com.github.onlynight.chatim.server.data.internal.Internal.Handshake)other);
+        if (other instanceof com.github.onlynight.chatim.server.data.internal.Internal.IHandshake) {
+          return mergeFrom((com.github.onlynight.chatim.server.data.internal.Internal.IHandshake)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.github.onlynight.chatim.server.data.internal.Internal.Handshake other) {
-        if (other == com.github.onlynight.chatim.server.data.internal.Internal.Handshake.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.github.onlynight.chatim.server.data.internal.Internal.IHandshake other) {
+        if (other == com.github.onlynight.chatim.server.data.internal.Internal.IHandshake.getDefaultInstance()) return this;
         if (other.hasFrom()) {
           setFrom(other.getFrom());
         }
@@ -512,11 +512,11 @@ public final class Internal {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.github.onlynight.chatim.server.data.internal.Internal.Handshake parsedMessage = null;
+        com.github.onlynight.chatim.server.data.internal.Internal.IHandshake parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.github.onlynight.chatim.server.data.internal.Internal.Handshake) e.getUnfinishedMessage();
+          parsedMessage = (com.github.onlynight.chatim.server.data.internal.Internal.IHandshake) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -599,15 +599,15 @@ public final class Internal {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:Handshake)
+      // @@protoc_insertion_point(builder_scope:IHandshake)
     }
 
     static {
-      defaultInstance = new Handshake(true);
+      defaultInstance = new IHandshake(true);
       defaultInstance.initFields();
     }
 
-    // @@protoc_insertion_point(class_scope:Handshake)
+    // @@protoc_insertion_point(class_scope:IHandshake)
   }
 
   public interface ILoginOrBuilder
@@ -2138,11 +2138,1103 @@ public final class Internal {
     // @@protoc_insertion_point(class_scope:ILogout)
   }
 
+  public interface ITextMessageOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // required .ServerType from = 1;
+    /**
+     * <code>required .ServerType from = 1;</code>
+     */
+    boolean hasFrom();
+    /**
+     * <code>required .ServerType from = 1;</code>
+     */
+    com.github.onlynight.chatim.server.data.internal.Internal.ServerType getFrom();
+
+    // required .ServerType to = 2;
+    /**
+     * <code>required .ServerType to = 2;</code>
+     */
+    boolean hasTo();
+    /**
+     * <code>required .ServerType to = 2;</code>
+     */
+    com.github.onlynight.chatim.server.data.internal.Internal.ServerType getTo();
+
+    // required string fromUserId = 3;
+    /**
+     * <code>required string fromUserId = 3;</code>
+     */
+    boolean hasFromUserId();
+    /**
+     * <code>required string fromUserId = 3;</code>
+     */
+    java.lang.String getFromUserId();
+    /**
+     * <code>required string fromUserId = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getFromUserIdBytes();
+
+    // required string toUserId = 4;
+    /**
+     * <code>required string toUserId = 4;</code>
+     */
+    boolean hasToUserId();
+    /**
+     * <code>required string toUserId = 4;</code>
+     */
+    java.lang.String getToUserId();
+    /**
+     * <code>required string toUserId = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getToUserIdBytes();
+
+    // required string msg = 5;
+    /**
+     * <code>required string msg = 5;</code>
+     */
+    boolean hasMsg();
+    /**
+     * <code>required string msg = 5;</code>
+     */
+    java.lang.String getMsg();
+    /**
+     * <code>required string msg = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getMsgBytes();
+
+    // required uint64 timestamp = 6;
+    /**
+     * <code>required uint64 timestamp = 6;</code>
+     */
+    boolean hasTimestamp();
+    /**
+     * <code>required uint64 timestamp = 6;</code>
+     */
+    long getTimestamp();
+  }
+  /**
+   * Protobuf type {@code ITextMessage}
+   */
+  public static final class ITextMessage extends
+      com.google.protobuf.GeneratedMessage
+      implements ITextMessageOrBuilder {
+    // Use ITextMessage.newBuilder() to construct.
+    private ITextMessage(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private ITextMessage(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final ITextMessage defaultInstance;
+    public static ITextMessage getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public ITextMessage getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private ITextMessage(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              int rawValue = input.readEnum();
+              com.github.onlynight.chatim.server.data.internal.Internal.ServerType value = com.github.onlynight.chatim.server.data.internal.Internal.ServerType.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(1, rawValue);
+              } else {
+                bitField0_ |= 0x00000001;
+                from_ = value;
+              }
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+              com.github.onlynight.chatim.server.data.internal.Internal.ServerType value = com.github.onlynight.chatim.server.data.internal.Internal.ServerType.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(2, rawValue);
+              } else {
+                bitField0_ |= 0x00000002;
+                to_ = value;
+              }
+              break;
+            }
+            case 26: {
+              bitField0_ |= 0x00000004;
+              fromUserId_ = input.readBytes();
+              break;
+            }
+            case 34: {
+              bitField0_ |= 0x00000008;
+              toUserId_ = input.readBytes();
+              break;
+            }
+            case 42: {
+              bitField0_ |= 0x00000010;
+              msg_ = input.readBytes();
+              break;
+            }
+            case 48: {
+              bitField0_ |= 0x00000020;
+              timestamp_ = input.readUInt64();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.github.onlynight.chatim.server.data.internal.Internal.internal_static_ITextMessage_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.github.onlynight.chatim.server.data.internal.Internal.internal_static_ITextMessage_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.github.onlynight.chatim.server.data.internal.Internal.ITextMessage.class, com.github.onlynight.chatim.server.data.internal.Internal.ITextMessage.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<ITextMessage> PARSER =
+        new com.google.protobuf.AbstractParser<ITextMessage>() {
+      public ITextMessage parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new ITextMessage(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ITextMessage> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    // required .ServerType from = 1;
+    public static final int FROM_FIELD_NUMBER = 1;
+    private com.github.onlynight.chatim.server.data.internal.Internal.ServerType from_;
+    /**
+     * <code>required .ServerType from = 1;</code>
+     */
+    public boolean hasFrom() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required .ServerType from = 1;</code>
+     */
+    public com.github.onlynight.chatim.server.data.internal.Internal.ServerType getFrom() {
+      return from_;
+    }
+
+    // required .ServerType to = 2;
+    public static final int TO_FIELD_NUMBER = 2;
+    private com.github.onlynight.chatim.server.data.internal.Internal.ServerType to_;
+    /**
+     * <code>required .ServerType to = 2;</code>
+     */
+    public boolean hasTo() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required .ServerType to = 2;</code>
+     */
+    public com.github.onlynight.chatim.server.data.internal.Internal.ServerType getTo() {
+      return to_;
+    }
+
+    // required string fromUserId = 3;
+    public static final int FROMUSERID_FIELD_NUMBER = 3;
+    private java.lang.Object fromUserId_;
+    /**
+     * <code>required string fromUserId = 3;</code>
+     */
+    public boolean hasFromUserId() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>required string fromUserId = 3;</code>
+     */
+    public java.lang.String getFromUserId() {
+      java.lang.Object ref = fromUserId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          fromUserId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string fromUserId = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFromUserIdBytes() {
+      java.lang.Object ref = fromUserId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        fromUserId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // required string toUserId = 4;
+    public static final int TOUSERID_FIELD_NUMBER = 4;
+    private java.lang.Object toUserId_;
+    /**
+     * <code>required string toUserId = 4;</code>
+     */
+    public boolean hasToUserId() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>required string toUserId = 4;</code>
+     */
+    public java.lang.String getToUserId() {
+      java.lang.Object ref = toUserId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          toUserId_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string toUserId = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getToUserIdBytes() {
+      java.lang.Object ref = toUserId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        toUserId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // required string msg = 5;
+    public static final int MSG_FIELD_NUMBER = 5;
+    private java.lang.Object msg_;
+    /**
+     * <code>required string msg = 5;</code>
+     */
+    public boolean hasMsg() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    /**
+     * <code>required string msg = 5;</code>
+     */
+    public java.lang.String getMsg() {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          msg_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string msg = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getMsgBytes() {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        msg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // required uint64 timestamp = 6;
+    public static final int TIMESTAMP_FIELD_NUMBER = 6;
+    private long timestamp_;
+    /**
+     * <code>required uint64 timestamp = 6;</code>
+     */
+    public boolean hasTimestamp() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    /**
+     * <code>required uint64 timestamp = 6;</code>
+     */
+    public long getTimestamp() {
+      return timestamp_;
+    }
+
+    private void initFields() {
+      from_ = com.github.onlynight.chatim.server.data.internal.Internal.ServerType.GATE;
+      to_ = com.github.onlynight.chatim.server.data.internal.Internal.ServerType.GATE;
+      fromUserId_ = "";
+      toUserId_ = "";
+      msg_ = "";
+      timestamp_ = 0L;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasFrom()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasTo()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasFromUserId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasToUserId()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasMsg()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasTimestamp()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeEnum(1, from_.getNumber());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeEnum(2, to_.getNumber());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getFromUserIdBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBytes(4, getToUserIdBytes());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeBytes(5, getMsgBytes());
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeUInt64(6, timestamp_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, from_.getNumber());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(2, to_.getNumber());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getFromUserIdBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, getToUserIdBytes());
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(5, getMsgBytes());
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(6, timestamp_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.github.onlynight.chatim.server.data.internal.Internal.ITextMessage parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.github.onlynight.chatim.server.data.internal.Internal.ITextMessage parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.github.onlynight.chatim.server.data.internal.Internal.ITextMessage parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.github.onlynight.chatim.server.data.internal.Internal.ITextMessage parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.github.onlynight.chatim.server.data.internal.Internal.ITextMessage parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.github.onlynight.chatim.server.data.internal.Internal.ITextMessage parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.github.onlynight.chatim.server.data.internal.Internal.ITextMessage parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.github.onlynight.chatim.server.data.internal.Internal.ITextMessage parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.github.onlynight.chatim.server.data.internal.Internal.ITextMessage parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.github.onlynight.chatim.server.data.internal.Internal.ITextMessage parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.github.onlynight.chatim.server.data.internal.Internal.ITextMessage prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code ITextMessage}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.github.onlynight.chatim.server.data.internal.Internal.ITextMessageOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.github.onlynight.chatim.server.data.internal.Internal.internal_static_ITextMessage_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.github.onlynight.chatim.server.data.internal.Internal.internal_static_ITextMessage_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.github.onlynight.chatim.server.data.internal.Internal.ITextMessage.class, com.github.onlynight.chatim.server.data.internal.Internal.ITextMessage.Builder.class);
+      }
+
+      // Construct using com.github.onlynight.chatim.server.data.internal.Internal.ITextMessage.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        from_ = com.github.onlynight.chatim.server.data.internal.Internal.ServerType.GATE;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        to_ = com.github.onlynight.chatim.server.data.internal.Internal.ServerType.GATE;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        fromUserId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
+        toUserId_ = "";
+        bitField0_ = (bitField0_ & ~0x00000008);
+        msg_ = "";
+        bitField0_ = (bitField0_ & ~0x00000010);
+        timestamp_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000020);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.github.onlynight.chatim.server.data.internal.Internal.internal_static_ITextMessage_descriptor;
+      }
+
+      public com.github.onlynight.chatim.server.data.internal.Internal.ITextMessage getDefaultInstanceForType() {
+        return com.github.onlynight.chatim.server.data.internal.Internal.ITextMessage.getDefaultInstance();
+      }
+
+      public com.github.onlynight.chatim.server.data.internal.Internal.ITextMessage build() {
+        com.github.onlynight.chatim.server.data.internal.Internal.ITextMessage result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.github.onlynight.chatim.server.data.internal.Internal.ITextMessage buildPartial() {
+        com.github.onlynight.chatim.server.data.internal.Internal.ITextMessage result = new com.github.onlynight.chatim.server.data.internal.Internal.ITextMessage(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.from_ = from_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.to_ = to_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.fromUserId_ = fromUserId_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.toUserId_ = toUserId_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.msg_ = msg_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.timestamp_ = timestamp_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.github.onlynight.chatim.server.data.internal.Internal.ITextMessage) {
+          return mergeFrom((com.github.onlynight.chatim.server.data.internal.Internal.ITextMessage)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.github.onlynight.chatim.server.data.internal.Internal.ITextMessage other) {
+        if (other == com.github.onlynight.chatim.server.data.internal.Internal.ITextMessage.getDefaultInstance()) return this;
+        if (other.hasFrom()) {
+          setFrom(other.getFrom());
+        }
+        if (other.hasTo()) {
+          setTo(other.getTo());
+        }
+        if (other.hasFromUserId()) {
+          bitField0_ |= 0x00000004;
+          fromUserId_ = other.fromUserId_;
+          onChanged();
+        }
+        if (other.hasToUserId()) {
+          bitField0_ |= 0x00000008;
+          toUserId_ = other.toUserId_;
+          onChanged();
+        }
+        if (other.hasMsg()) {
+          bitField0_ |= 0x00000010;
+          msg_ = other.msg_;
+          onChanged();
+        }
+        if (other.hasTimestamp()) {
+          setTimestamp(other.getTimestamp());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasFrom()) {
+          
+          return false;
+        }
+        if (!hasTo()) {
+          
+          return false;
+        }
+        if (!hasFromUserId()) {
+          
+          return false;
+        }
+        if (!hasToUserId()) {
+          
+          return false;
+        }
+        if (!hasMsg()) {
+          
+          return false;
+        }
+        if (!hasTimestamp()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.github.onlynight.chatim.server.data.internal.Internal.ITextMessage parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.github.onlynight.chatim.server.data.internal.Internal.ITextMessage) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required .ServerType from = 1;
+      private com.github.onlynight.chatim.server.data.internal.Internal.ServerType from_ = com.github.onlynight.chatim.server.data.internal.Internal.ServerType.GATE;
+      /**
+       * <code>required .ServerType from = 1;</code>
+       */
+      public boolean hasFrom() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required .ServerType from = 1;</code>
+       */
+      public com.github.onlynight.chatim.server.data.internal.Internal.ServerType getFrom() {
+        return from_;
+      }
+      /**
+       * <code>required .ServerType from = 1;</code>
+       */
+      public Builder setFrom(com.github.onlynight.chatim.server.data.internal.Internal.ServerType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        from_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required .ServerType from = 1;</code>
+       */
+      public Builder clearFrom() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        from_ = com.github.onlynight.chatim.server.data.internal.Internal.ServerType.GATE;
+        onChanged();
+        return this;
+      }
+
+      // required .ServerType to = 2;
+      private com.github.onlynight.chatim.server.data.internal.Internal.ServerType to_ = com.github.onlynight.chatim.server.data.internal.Internal.ServerType.GATE;
+      /**
+       * <code>required .ServerType to = 2;</code>
+       */
+      public boolean hasTo() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required .ServerType to = 2;</code>
+       */
+      public com.github.onlynight.chatim.server.data.internal.Internal.ServerType getTo() {
+        return to_;
+      }
+      /**
+       * <code>required .ServerType to = 2;</code>
+       */
+      public Builder setTo(com.github.onlynight.chatim.server.data.internal.Internal.ServerType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000002;
+        to_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required .ServerType to = 2;</code>
+       */
+      public Builder clearTo() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        to_ = com.github.onlynight.chatim.server.data.internal.Internal.ServerType.GATE;
+        onChanged();
+        return this;
+      }
+
+      // required string fromUserId = 3;
+      private java.lang.Object fromUserId_ = "";
+      /**
+       * <code>required string fromUserId = 3;</code>
+       */
+      public boolean hasFromUserId() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>required string fromUserId = 3;</code>
+       */
+      public java.lang.String getFromUserId() {
+        java.lang.Object ref = fromUserId_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          fromUserId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string fromUserId = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getFromUserIdBytes() {
+        java.lang.Object ref = fromUserId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          fromUserId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string fromUserId = 3;</code>
+       */
+      public Builder setFromUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        fromUserId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string fromUserId = 3;</code>
+       */
+      public Builder clearFromUserId() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        fromUserId_ = getDefaultInstance().getFromUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string fromUserId = 3;</code>
+       */
+      public Builder setFromUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        fromUserId_ = value;
+        onChanged();
+        return this;
+      }
+
+      // required string toUserId = 4;
+      private java.lang.Object toUserId_ = "";
+      /**
+       * <code>required string toUserId = 4;</code>
+       */
+      public boolean hasToUserId() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>required string toUserId = 4;</code>
+       */
+      public java.lang.String getToUserId() {
+        java.lang.Object ref = toUserId_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          toUserId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string toUserId = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getToUserIdBytes() {
+        java.lang.Object ref = toUserId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          toUserId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string toUserId = 4;</code>
+       */
+      public Builder setToUserId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        toUserId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string toUserId = 4;</code>
+       */
+      public Builder clearToUserId() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        toUserId_ = getDefaultInstance().getToUserId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string toUserId = 4;</code>
+       */
+      public Builder setToUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        toUserId_ = value;
+        onChanged();
+        return this;
+      }
+
+      // required string msg = 5;
+      private java.lang.Object msg_ = "";
+      /**
+       * <code>required string msg = 5;</code>
+       */
+      public boolean hasMsg() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      /**
+       * <code>required string msg = 5;</code>
+       */
+      public java.lang.String getMsg() {
+        java.lang.Object ref = msg_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          msg_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string msg = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getMsgBytes() {
+        java.lang.Object ref = msg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          msg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string msg = 5;</code>
+       */
+      public Builder setMsg(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        msg_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string msg = 5;</code>
+       */
+      public Builder clearMsg() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        msg_ = getDefaultInstance().getMsg();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string msg = 5;</code>
+       */
+      public Builder setMsgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000010;
+        msg_ = value;
+        onChanged();
+        return this;
+      }
+
+      // required uint64 timestamp = 6;
+      private long timestamp_ ;
+      /**
+       * <code>required uint64 timestamp = 6;</code>
+       */
+      public boolean hasTimestamp() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      /**
+       * <code>required uint64 timestamp = 6;</code>
+       */
+      public long getTimestamp() {
+        return timestamp_;
+      }
+      /**
+       * <code>required uint64 timestamp = 6;</code>
+       */
+      public Builder setTimestamp(long value) {
+        bitField0_ |= 0x00000020;
+        timestamp_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required uint64 timestamp = 6;</code>
+       */
+      public Builder clearTimestamp() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        timestamp_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:ITextMessage)
+    }
+
+    static {
+      defaultInstance = new ITextMessage(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:ITextMessage)
+  }
+
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_Handshake_descriptor;
+    internal_static_IHandshake_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_Handshake_fieldAccessorTable;
+      internal_static_IHandshake_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_ILogin_descriptor;
   private static
@@ -2153,6 +3245,11 @@ public final class Internal {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_ILogout_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_ITextMessage_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_ITextMessage_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2163,27 +3260,31 @@ public final class Internal {
   static {
     java.lang.String[] descriptorData = {
       "\n\027internal/internal.proto\032!protocol_type" +
-      "/protocol_type.proto\"?\n\tHandshake\022\031\n\004fro" +
-      "m\030\001 \002(\0162\013.ServerType\022\027\n\002to\030\002 \002(\0162\013.Serve" +
-      "rType\"c\n\006ILogin\022\031\n\004from\030\001 \002(\0162\013.ServerTy" +
-      "pe\022\027\n\002to\030\002 \002(\0162\013.ServerType\022\016\n\006userId\030\003 " +
-      "\002(\t\022\025\n\rconnection_id\030\004 \002(\003\"d\n\007ILogout\022\031\n" +
-      "\004from\030\001 \002(\0162\013.ServerType\022\027\n\002to\030\002 \002(\0162\013.S" +
-      "erverType\022\016\n\006userId\030\003 \002(\t\022\025\n\rconnection_" +
-      "id\030\004 \002(\003*+\n\nServerType\022\010\n\004GATE\020\001\022\010\n\004AUTH" +
-      "\020\002\022\t\n\005LOGIC\020\003B<\n0com.github.onlynight.ch",
-      "atim.server.data.internalB\010InternalP\000"
+      "/protocol_type.proto\"@\n\nIHandshake\022\031\n\004fr" +
+      "om\030\001 \002(\0162\013.ServerType\022\027\n\002to\030\002 \002(\0162\013.Serv" +
+      "erType\"c\n\006ILogin\022\031\n\004from\030\001 \002(\0162\013.ServerT" +
+      "ype\022\027\n\002to\030\002 \002(\0162\013.ServerType\022\016\n\006userId\030\003" +
+      " \002(\t\022\025\n\rconnection_id\030\004 \002(\003\"d\n\007ILogout\022\031" +
+      "\n\004from\030\001 \002(\0162\013.ServerType\022\027\n\002to\030\002 \002(\0162\013." +
+      "ServerType\022\016\n\006userId\030\003 \002(\t\022\025\n\rconnection" +
+      "_id\030\004 \002(\003\"\210\001\n\014ITextMessage\022\031\n\004from\030\001 \002(\016" +
+      "2\013.ServerType\022\027\n\002to\030\002 \002(\0162\013.ServerType\022\022",
+      "\n\nfromUserId\030\003 \002(\t\022\020\n\010toUserId\030\004 \002(\t\022\013\n\003" +
+      "msg\030\005 \002(\t\022\021\n\ttimestamp\030\006 \002(\004*+\n\nServerTy" +
+      "pe\022\010\n\004GATE\020\001\022\010\n\004AUTH\020\002\022\t\n\005LOGIC\020\003B<\n0com" +
+      ".github.onlynight.chatim.server.data.int" +
+      "ernalB\010InternalP\000"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
         public com.google.protobuf.ExtensionRegistry assignDescriptors(
             com.google.protobuf.Descriptors.FileDescriptor root) {
           descriptor = root;
-          internal_static_Handshake_descriptor =
+          internal_static_IHandshake_descriptor =
             getDescriptor().getMessageTypes().get(0);
-          internal_static_Handshake_fieldAccessorTable = new
+          internal_static_IHandshake_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_Handshake_descriptor,
+              internal_static_IHandshake_descriptor,
               new java.lang.String[] { "From", "To", });
           internal_static_ILogin_descriptor =
             getDescriptor().getMessageTypes().get(1);
@@ -2197,6 +3298,12 @@ public final class Internal {
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_ILogout_descriptor,
               new java.lang.String[] { "From", "To", "UserId", "ConnectionId", });
+          internal_static_ITextMessage_descriptor =
+            getDescriptor().getMessageTypes().get(3);
+          internal_static_ITextMessage_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_ITextMessage_descriptor,
+              new java.lang.String[] { "From", "To", "FromUserId", "ToUserId", "Msg", "Timestamp", });
           return null;
         }
       };
