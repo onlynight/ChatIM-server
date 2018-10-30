@@ -1,5 +1,6 @@
 package com.github.onlynight.chatim.server.handler;
 
+import com.github.onlynight.chatim.server.data.internal.Internal;
 import com.github.onlynight.chatim.server.data.protocol.Protocol;
 import com.github.onlynight.chatim.server.data.protocol.ProtocolMap;
 import com.google.protobuf.Message;

@@ -17,3 +17,11 @@ message TextMessage {
     required uint64 timestamp = 4;
 
 }
+
+message BroadTextMessage {
+
+    required string from = 1;
+    required string msg = 2;
+    required uint64 timestamp = 3;
+
+}

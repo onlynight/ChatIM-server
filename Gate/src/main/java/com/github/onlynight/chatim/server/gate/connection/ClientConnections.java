@@ -28,7 +28,6 @@ public class ClientConnections {
 
     public static ChannelHandlerContext getConnection(String userId) {
         Long connectionId = userConnectionMap.get(userId);
-        System.out.println(connectionId);
         return connections.get(connectionId);
     }
 
@@ -52,6 +51,10 @@ public class ClientConnections {
 
     public static int connectionLength() {
         return connections.size();
+    }
+
+    public static ConcurrentHashMap<Long, ChannelHandlerContext> getConnections() {
+        return connections;
     }
 
 }

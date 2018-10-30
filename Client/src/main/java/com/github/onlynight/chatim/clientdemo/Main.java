@@ -49,7 +49,7 @@ public class Main {
 
     private static void sleep(long time) {
         try {
-            Thread.sleep(1000);
+            Thread.sleep(time);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

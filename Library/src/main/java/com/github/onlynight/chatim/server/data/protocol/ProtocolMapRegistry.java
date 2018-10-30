@@ -12,6 +12,9 @@ public class ProtocolMapRegistry {
         ProtocolMap.register(Protocol.ProtocolType.LOGIN,
                 External.Login::parseFrom, External.Login.class);
 
+        ProtocolMap.register(Protocol.ProtocolType.BROAD_TEXT_MESSAGE,
+                External.BroadTextMessage::parseFrom, External.BroadTextMessage.class);
+
 
         ProtocolMap.register(Protocol.ProtocolType.I_HANDSHAKE,
                 Internal.IHandshake::parseFrom, Internal.IHandshake.class);
@@ -24,6 +27,9 @@ public class ProtocolMapRegistry {
 
         ProtocolMap.register(Protocol.ProtocolType.I_TEXT_MESSAGE,
                 Internal.ITextMessage::parseFrom, Internal.ITextMessage.class);
+
+        ProtocolMap.register(Protocol.ProtocolType.I_BROAD_TEXT_MESSAGE,
+                Internal.IBroadTextMessage::parseFrom, Internal.IBroadTextMessage.class);
     }
 
 }

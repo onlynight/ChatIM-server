@@ -10,6 +10,8 @@ import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
 import org.apache.log4j.Logger;
 
+import java.util.concurrent.ConcurrentHashMap;
+
 public class GateServerHandler extends ChannelHandlerAdapter {
 
     private Logger logger = Logger.getLogger(GateServerHandler.class);
@@ -72,6 +74,14 @@ public class GateServerHandler extends ChannelHandlerAdapter {
 
             LogicConnectionHandler.getInstance()
                     .getChannelHandlerContext().writeAndFlush(textMessage);
+        } else if (message instanceof External.BroadTextMessage) {
+//            Long connectionId = ctx.attr(ClientConnections.CONNECTION_ID).get();
+            ConcurrentHashMap<Long, ChannelHandlerContext> connections =
+                    ClientConnections.getConnections();
+            for (ChannelHandlerContext context :
+                    connections.values()) {
+                context.writeAndFlush(message);
+            }
         }
     }
 

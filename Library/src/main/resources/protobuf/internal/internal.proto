@@ -40,3 +40,13 @@ message ITextMessage {
     required uint64 timestamp = 6;
 
 }
+
+message IBroadTextMessage {
+
+    required ServerType from = 1;
+    required ServerType to = 2;
+    required string fromUserId = 3;
+    required string msg = 4;
+    required uint64 timestamp = 5;
+
+}
