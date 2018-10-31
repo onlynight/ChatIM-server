@@ -1,4 +1,4 @@
-package com.github.onlynight.chatim.bioclient;
+package com.github.onlynight.chatim.clientdemo;
 
 import com.github.onlynight.chatim.server.data.external.External;
 import com.github.onlynight.chatim.server.data.protocol.Protocol;
@@ -14,7 +14,7 @@ import java.net.UnknownHostException;
 import java.nio.ByteBuffer;
 import java.util.Date;
 
-public class Main {
+public class MainBIO {
 
     private static final String DEFAULT_USER_ID = "5";
     private static final String DEFAULT_CHAT_USER_ID = "1";
@@ -59,9 +59,16 @@ public class Main {
                     .build();
             sendData(os, encodeData(textMessage.toByteArray(), Protocol.ProtocolType.TEXT_MESSAGE));
             System.out.println("USER <" + DEFAULT_USER_ID + "> SEND msg TO USER <" + DEFAULT_CHAT_USER_ID + "> SUCCESS");
+
+            for (int i = 0; i < 10; i++) {
+                Thread.sleep(1000);
+                sendData(os, encodeData(textMessage.toByteArray(), Protocol.ProtocolType.TEXT_MESSAGE));
+                System.out.println("USER <" + DEFAULT_USER_ID + "> SEND msg TO USER <" + DEFAULT_CHAT_USER_ID + "> SUCCESS");
+            }
+
             socket.close();
 
-        } catch (IOException e) {
+        } catch (IOException | InterruptedException e) {
             e.printStackTrace();
         }
     }

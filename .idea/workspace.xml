@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b167d439-1350-48cd-9a49-2c3f879dcb2c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/BIOClient/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/BIOClient/src/main/java/com/github/onlynight/chatim/bioclient/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BIOClient/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BIOClient/src/main/java/com/github/onlynight/chatim/bioclient/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/com/github/onlynight/chatim/clientdemo/MainBIO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/com/github/onlynight/chatim/clientdemo/MainBroad.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/com/github/onlynight/chatim/clientdemo/MainBroad.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -112,8 +113,8 @@
           <entry key="bat" value="6" />
           <entry key="class" value="1" />
           <entry key="gitignore" value="3" />
-          <entry key="gradle" value="13" />
-          <entry key="java" value="424" />
+          <entry key="gradle" value="14" />
+          <entry key="java" value="425" />
           <entry key="log" value="1" />
           <entry key="md" value="1" />
           <entry key="properties" value="1" />
@@ -125,8 +126,8 @@
         <counts>
           <entry key="Bat" value="6" />
           <entry key="CLASS" value="1" />
-          <entry key="Groovy" value="13" />
-          <entry key="JAVA" value="424" />
+          <entry key="Groovy" value="14" />
+          <entry key="JAVA" value="425" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="PROTO" value="46" />
@@ -137,22 +138,22 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="bat" value="87" />
-          <entry key="dummy" value="71" />
+          <entry key="dummy" value="74" />
           <entry key="gitignore" value="24" />
           <entry key="gradle" value="70" />
-          <entry key="java" value="12631" />
+          <entry key="java" value="12737" />
           <entry key="md" value="64" />
           <entry key="proto" value="1790" />
-          <entry key="txt" value="214" />
+          <entry key="txt" value="241" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Bat" value="87" />
           <entry key="Groovy" value="70" />
-          <entry key="JAVA" value="12631" />
+          <entry key="JAVA" value="12737" />
           <entry key="Markdown" value="64" />
-          <entry key="PLAIN_TEXT" value="309" />
+          <entry key="PLAIN_TEXT" value="339" />
           <entry key="PROTO" value="1790" />
         </counts>
       </usages-collector>
@@ -166,9 +167,9 @@
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.17" value="2" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.open.time.8" value="1" />
+          <entry key="project.open.time.8" value="2" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="11" />
+          <entry key="project.opened" value="12" />
         </counts>
       </usages-collector>
     </session>
@@ -176,10 +177,25 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/BIOClient/src/main/java/com/github/onlynight/chatim/bioclient/Main.java">
+        <entry file="file://$PROJECT_DIR$/Client/src/main/java/com/github/onlynight/chatim/clientdemo/MainBIO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+            <state relative-caret-position="242">
+              <caret line="90" column="9" lean-forward="true" selection-start-line="90" selection-start-column="9" selection-end-line="90" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Client/src/main/java/com/github/onlynight/chatim/clientdemo/MainBroad.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="592">
+              <caret line="37" column="52" selection-start-line="37" selection-start-column="52" selection-end-line="37" selection-end-column="52" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -239,10 +255,6 @@
               <ExternalProjectPojo>
                 <option name="name" value=":Auth" />
                 <option name="path" value="$PROJECT_DIR$/Auth" />
-              </ExternalProjectPojo>
-              <ExternalProjectPojo>
-                <option name="name" value=":BIOClient" />
-                <option name="path" value="$PROJECT_DIR$/BIOClient" />
               </ExternalProjectPojo>
               <ExternalProjectPojo>
                 <option name="name" value=":Client" />
@@ -1228,7 +1240,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="15404700380034" />
+        <entry key="$PROJECT_DIR$" value="13863735997280" />
         <entry key="$PROJECT_DIR$/.gradle" value="0" />
         <entry key="$PROJECT_DIR$/Auth/build.gradle" value="2593510958" />
         <entry key="$PROJECT_DIR$/BIOClient/build.gradle" value="208108575" />
@@ -1238,7 +1250,7 @@
         <entry key="$PROJECT_DIR$/Logic/build.gradle" value="208108575" />
         <entry key="$PROJECT_DIR$/build.gradle" value="514006667" />
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="2585518924" />
-        <entry key="$PROJECT_DIR$/settings.gradle" value="236406260" />
+        <entry key="$PROJECT_DIR$/settings.gradle" value="1828739897" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -1497,9 +1509,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Auth/src/main/java/com/github/onlynight/chatim/server/auth/handler/GateConnectionHandler.java" />
-        <option value="$PROJECT_DIR$/Gate/src/main/java/com/github/onlynight/chatim/server/gate/ClientConnections.java" />
-        <option value="$PROJECT_DIR$/Gate/src/main/java/com/github/onlynight/chatim/server/gate/handler/AuthConnectionHandler.java" />
         <option value="$PROJECT_DIR$/Client/build.gradle" />
         <option value="$PROJECT_DIR$/Client/src/main/java/com/github/onlynight/chatim/clientdemo/config/ConfigReader.java" />
         <option value="$PROJECT_DIR$/Library/src/main/resources/protobuf/external/External.proto" />
@@ -1534,7 +1543,6 @@
         <option value="$PROJECT_DIR$/Library/src/main/resources/protobuf/internal/internal.proto" />
         <option value="$PROJECT_DIR$/Client/src/main/java/com/github/onlynight/chatim/clientdemo/Main.java" />
         <option value="$PROJECT_DIR$/Client/src/main/java/com/github/onlynight/chatim/clientdemo/MainBorad.java" />
-        <option value="$PROJECT_DIR$/Client/src/main/java/com/github/onlynight/chatim/clientdemo/MainBroad.java" />
         <option value="$PROJECT_DIR$/Library/src/main/java/com/github/onlynight/chatim/server/handler/DecodeHandler.java" />
         <option value="$PROJECT_DIR$/Library/src/main/resources/protobuf/protocol_type/protocol_type.proto" />
         <option value="$PROJECT_DIR$/Library/src/main/resources/protobuf/external/external.proto" />
@@ -1546,8 +1554,12 @@
         <option value="$PROJECT_DIR$/Gate/src/main/java/com/github/onlynight/chatim/server/gate/GateServerHandler.java" />
         <option value="$PROJECT_DIR$/Auth/src/main/java/com/github/onlynight/chatim/server/auth/connection/LogicConnectionHandler.java" />
         <option value="$PROJECT_DIR$/Gate/src/main/java/com/github/onlynight/chatim/server/gate/connection/ClientConnections.java" />
-        <option value="$PROJECT_DIR$/settings.gradle" />
         <option value="$PROJECT_DIR$/BIOClient/build.gradle" />
+        <option value="$PROJECT_DIR$/BIOClient/src/main/java/com/github/onlynight/chatim/bioclient/Main.java" />
+        <option value="$PROJECT_DIR$/BIOClient/src/main/java/com/github/onlynight/chatim/bioclient/MainBIO.java" />
+        <option value="$PROJECT_DIR$/Client/src/main/java/com/github/onlynight/chatim/clientdemo/MainBIO.java" />
+        <option value="$PROJECT_DIR$/settings.gradle" />
+        <option value="$PROJECT_DIR$/Client/src/main/java/com/github/onlynight/chatim/clientdemo/MainBroad.java" />
       </list>
     </option>
   </component>
@@ -1569,8 +1581,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -1581,37 +1594,37 @@
             <path>
               <item name="ChatIM-server" type="b2602c69:ProjectViewProjectNode" />
               <item name="ChatIM-server" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="BIOClient" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="Client" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
               <item name="ChatIM-server" type="b2602c69:ProjectViewProjectNode" />
               <item name="ChatIM-server" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="BIOClient" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="Client" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ChatIM-server" type="b2602c69:ProjectViewProjectNode" />
               <item name="ChatIM-server" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="BIOClient" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChatIM-server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChatIM-server" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="BIOClient" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="Client" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ChatIM-server" type="b2602c69:ProjectViewProjectNode" />
               <item name="ChatIM-server" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="BIOClient" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="Client" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="bioclient" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ChatIM-server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ChatIM-server" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="Client" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="clientdemo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ChatIM-server" type="b2602c69:ProjectViewProjectNode" />
@@ -1662,14 +1675,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="TextMessage&#9;PSI&#9;JAVA://com.github.onlynight.chatim.server.data.external.External.TextMessage" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540969699181" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540976954877" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.14355469" />
     <property name="project.structure.side.proportion" value="0.27816093" />
@@ -1697,7 +1709,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.BIOClient">
+  <component name="RunManager" selected="Application.ClientBroad">
     <configuration name="AuthServer" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.github.onlynight.chatim.server.auth.Main" />
       <module name="Auth_main" />
@@ -1706,8 +1718,8 @@
       </method>
     </configuration>
     <configuration name="BIOClient" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="com.github.onlynight.chatim.bioclient.Main" />
-      <module name="BIOClient_main" />
+      <option name="MAIN_CLASS_NAME" value="com.github.onlynight.chatim.clientdemo.MainBIO" />
+      <module name="Client_main" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -1854,7 +1866,8 @@
       <workItem from="1540794409044" duration="12412000" />
       <workItem from="1540807284775" duration="1970000" />
       <workItem from="1540864263753" duration="5909000" />
-      <workItem from="1540892251011" duration="10946000" />
+      <workItem from="1540892251011" duration="12026000" />
+      <workItem from="1540973752862" duration="2960000" />
     </task>
     <task id="LOCAL-00001" summary="add auth server connection">
       <created>1540295089324</created>
@@ -1933,11 +1946,18 @@
       <option name="project" value="LOCAL" />
       <updated>1540965192119</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add bio client demo module">
+      <created>1540969722189</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1540969722189</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86858000" />
+    <option name="totallyTimeSpent" value="90898000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1950,9 +1970,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23720682" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23987207" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1961,7 +1980,7 @@
       <window_info id="UI Designer" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286334" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.318872" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.318872" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -2005,7 +2024,8 @@
     <MESSAGE value="finish client text message chat" />
     <MESSAGE value="add broad client" />
     <MESSAGE value="delete exception handler" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete exception handler" />
+    <MESSAGE value="add bio client demo module" />
+    <option name="LAST_COMMIT_MESSAGE" value="add bio client demo module" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/lang/Runnable.java">
@@ -2117,16 +2137,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="82">
           <caret line="10" column="41" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Client/src/main/java/com/github/onlynight/chatim/clientdemo/MainBroad.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="17" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2296,9 +2306,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="716">
           <caret line="85" column="5" selection-start-line="85" selection-start-column="5" selection-end-line="85" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2334,13 +2341,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="884">
           <caret line="56" column="5" lean-forward="true" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1022#1023#0" expanded="true" />
-            <element signature="e#1074#1075#0" expanded="true" />
-            <element signature="e#2012#2013#0" expanded="true" />
-            <element signature="e#2046#2047#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2351,13 +2351,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BIOClient/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -2365,10 +2358,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BIOClient/src/main/java/com/github/onlynight/chatim/bioclient/Main.java">
+    <entry file="file://$PROJECT_DIR$/settings.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+        <state relative-caret-position="102">
+          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/main/java/com/github/onlynight/chatim/clientdemo/MainBroad.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="592">
+          <caret line="37" column="52" selection-start-line="37" selection-start-column="52" selection-end-line="37" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Client/src/main/java/com/github/onlynight/chatim/clientdemo/MainBIO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="90" column="9" lean-forward="true" selection-start-line="90" selection-start-column="9" selection-end-line="90" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -2425,7 +2438,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Logic_main|Logic</last-edited>
+          <last-edited>BIOClient_main|BIOClient</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

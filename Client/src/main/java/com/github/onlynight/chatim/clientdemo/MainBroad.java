@@ -34,7 +34,14 @@ public class MainBroad {
                     .setMsg("broad cast message")
                     .setTimestamp(new Date().getTime())
                     .build();
-            ctx.writeAndFlush(broadTextMessage);
+            while (true){
+                ctx.writeAndFlush(broadTextMessage);
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
         }).start();
     }
 
