@@ -54,6 +54,20 @@ public class AuthConnectionHandler extends ChannelHandlerAdapter {
             } else {
                 logger.info("USER <" + ((Internal.ITextMessage) message).getToUserId() + "> not online");
             }
+        } else if (message instanceof External.LoginResult) {
+            logger.info("RECEIVE login result for connId <"
+                    + ((External.LoginResult) message).getConnectionId() + ">");
+            long connId = ((External.LoginResult) message).getConnectionId();
+            ChannelHandlerContext clientCtx = ClientConnections.getConnection(connId);
+
+            if (clientCtx != null) {
+                External.LoginResult result = External.LoginResult.newBuilder()
+                        .setState(((External.LoginResult) message).getState())
+                        .setMsg(((External.LoginResult) message).getMsg())
+                        .build();
+
+                clientCtx.writeAndFlush(result);
+            }
         }
     }
 

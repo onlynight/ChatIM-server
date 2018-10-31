@@ -26,25 +26,29 @@ public final class Protocol {
      */
     BROAD_TEXT_MESSAGE(2, 102),
     /**
+     * <code>LOGIN_RESULT = 103;</code>
+     */
+    LOGIN_RESULT(3, 103),
+    /**
      * <code>I_HANDSHAKE = 200;</code>
      */
-    I_HANDSHAKE(3, 200),
+    I_HANDSHAKE(4, 200),
     /**
      * <code>I_LOGIN = 201;</code>
      */
-    I_LOGIN(4, 201),
+    I_LOGIN(5, 201),
     /**
      * <code>I_LOGOUT = 202;</code>
      */
-    I_LOGOUT(5, 202),
+    I_LOGOUT(6, 202),
     /**
      * <code>I_TEXT_MESSAGE = 203;</code>
      */
-    I_TEXT_MESSAGE(6, 203),
+    I_TEXT_MESSAGE(7, 203),
     /**
      * <code>I_BROAD_TEXT_MESSAGE = 204;</code>
      */
-    I_BROAD_TEXT_MESSAGE(7, 204),
+    I_BROAD_TEXT_MESSAGE(8, 204),
     ;
 
     /**
@@ -59,6 +63,10 @@ public final class Protocol {
      * <code>BROAD_TEXT_MESSAGE = 102;</code>
      */
     public static final int BROAD_TEXT_MESSAGE_VALUE = 102;
+    /**
+     * <code>LOGIN_RESULT = 103;</code>
+     */
+    public static final int LOGIN_RESULT_VALUE = 103;
     /**
      * <code>I_HANDSHAKE = 200;</code>
      */
@@ -88,6 +96,7 @@ public final class Protocol {
         case 100: return LOGIN;
         case 101: return TEXT_MESSAGE;
         case 102: return BROAD_TEXT_MESSAGE;
+        case 103: return LOGIN_RESULT;
         case 200: return I_HANDSHAKE;
         case 201: return I_LOGIN;
         case 202: return I_LOGOUT;
@@ -153,13 +162,13 @@ public final class Protocol {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n!protocol_type/protocol_type.proto*\242\001\n\014" +
+      "\n!protocol_type/protocol_type.proto*\264\001\n\014" +
       "ProtocolType\022\t\n\005LOGIN\020d\022\020\n\014TEXT_MESSAGE\020" +
-      "e\022\026\n\022BROAD_TEXT_MESSAGE\020f\022\020\n\013I_HANDSHAKE" +
-      "\020\310\001\022\014\n\007I_LOGIN\020\311\001\022\r\n\010I_LOGOUT\020\312\001\022\023\n\016I_TE" +
-      "XT_MESSAGE\020\313\001\022\031\n\024I_BROAD_TEXT_MESSAGE\020\314\001" +
-      "B<\n0com.github.onlynight.chatim.server.d" +
-      "ata.protocolB\010Protocol"
+      "e\022\026\n\022BROAD_TEXT_MESSAGE\020f\022\020\n\014LOGIN_RESUL" +
+      "T\020g\022\020\n\013I_HANDSHAKE\020\310\001\022\014\n\007I_LOGIN\020\311\001\022\r\n\010I" +
+      "_LOGOUT\020\312\001\022\023\n\016I_TEXT_MESSAGE\020\313\001\022\031\n\024I_BRO" +
+      "AD_TEXT_MESSAGE\020\314\001B<\n0com.github.onlynig" +
+      "ht.chatim.server.data.protocolB\010Protocol"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {

@@ -1,6 +1,7 @@
 package com.github.onlynight.chatim.server.auth;
 
 import com.github.onlynight.chatim.server.auth.connection.GateConnectionHandler;
+import com.github.onlynight.chatim.server.data.external.External;
 import com.github.onlynight.chatim.server.data.internal.Internal;
 import com.google.protobuf.Message;
 import io.netty.channel.ChannelHandlerAdapter;
@@ -36,6 +37,15 @@ public class AuthServerHandler extends ChannelHandlerAdapter {
                     + ((Internal.ILogin) message).getConnectionId() + ">" + " user login pass from GATE");
             onlineClients.put(((Internal.ILogin) message).getUserId(), ((Internal.ILogin) message).getConnectionId());
             logger.info("online user size : " + onlineClients.size());
+
+            logger.info("RETURN login result to gate server connId <" + ((Internal.ILogin) message).getConnectionId()
+                    + "> login state is " + External.LoginResult.LoginState.SUCCESS);
+            External.LoginResult result = External.LoginResult.newBuilder()
+                    .setState(External.LoginResult.LoginState.SUCCESS)
+                    .setMsg("login success!")
+                    .setConnectionId(((Internal.ILogin) message).getConnectionId())
+                    .build();
+            GateConnectionHandler.getInstance().getChannelHandlerContext().writeAndFlush(result);
         } else if (message instanceof Internal.ILogout) {
             onlineClients.remove(((Internal.ILogout) message).getUserId());
             logger.info("<" + ((Internal.ILogout) message).getUserId() + ","
@@ -61,12 +71,6 @@ public class AuthServerHandler extends ChannelHandlerAdapter {
         } else {
             // TODO: 2018/10/24 handle message
         }
-    }
-
-    @Override
-    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
-        cause.printStackTrace();
-        ctx.close();
     }
 
     private void handShakeWithServer(ChannelHandlerContext ctx, Internal.ServerType to) {

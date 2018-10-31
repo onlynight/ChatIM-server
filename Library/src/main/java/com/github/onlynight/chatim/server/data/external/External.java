@@ -2594,6 +2594,764 @@ public final class External {
     // @@protoc_insertion_point(class_scope:BroadTextMessage)
   }
 
+  public interface LoginResultOrBuilder
+      extends com.google.protobuf.MessageOrBuilder {
+
+    // required .LoginResult.LoginState state = 1;
+    /**
+     * <code>required .LoginResult.LoginState state = 1;</code>
+     */
+    boolean hasState();
+    /**
+     * <code>required .LoginResult.LoginState state = 1;</code>
+     */
+    com.github.onlynight.chatim.server.data.external.External.LoginResult.LoginState getState();
+
+    // required string msg = 2;
+    /**
+     * <code>required string msg = 2;</code>
+     */
+    boolean hasMsg();
+    /**
+     * <code>required string msg = 2;</code>
+     */
+    java.lang.String getMsg();
+    /**
+     * <code>required string msg = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getMsgBytes();
+
+    // optional int64 connectionId = 3;
+    /**
+     * <code>optional int64 connectionId = 3;</code>
+     */
+    boolean hasConnectionId();
+    /**
+     * <code>optional int64 connectionId = 3;</code>
+     */
+    long getConnectionId();
+  }
+  /**
+   * Protobuf type {@code LoginResult}
+   */
+  public static final class LoginResult extends
+      com.google.protobuf.GeneratedMessage
+      implements LoginResultOrBuilder {
+    // Use LoginResult.newBuilder() to construct.
+    private LoginResult(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private LoginResult(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final LoginResult defaultInstance;
+    public static LoginResult getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public LoginResult getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private LoginResult(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              int rawValue = input.readEnum();
+              com.github.onlynight.chatim.server.data.external.External.LoginResult.LoginState value = com.github.onlynight.chatim.server.data.external.External.LoginResult.LoginState.valueOf(rawValue);
+              if (value == null) {
+                unknownFields.mergeVarintField(1, rawValue);
+              } else {
+                bitField0_ |= 0x00000001;
+                state_ = value;
+              }
+              break;
+            }
+            case 18: {
+              bitField0_ |= 0x00000002;
+              msg_ = input.readBytes();
+              break;
+            }
+            case 24: {
+              bitField0_ |= 0x00000004;
+              connectionId_ = input.readInt64();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.github.onlynight.chatim.server.data.external.External.internal_static_LoginResult_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.github.onlynight.chatim.server.data.external.External.internal_static_LoginResult_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.github.onlynight.chatim.server.data.external.External.LoginResult.class, com.github.onlynight.chatim.server.data.external.External.LoginResult.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<LoginResult> PARSER =
+        new com.google.protobuf.AbstractParser<LoginResult>() {
+      public LoginResult parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new LoginResult(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<LoginResult> getParserForType() {
+      return PARSER;
+    }
+
+    /**
+     * Protobuf enum {@code LoginResult.LoginState}
+     */
+    public enum LoginState
+        implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       * <code>SUCCESS = 1;</code>
+       */
+      SUCCESS(0, 1),
+      /**
+       * <code>FAIL = 2;</code>
+       */
+      FAIL(1, 2),
+      /**
+       * <code>SERVER_ERROR = 3;</code>
+       */
+      SERVER_ERROR(2, 3),
+      /**
+       * <code>UNKNOWN = 4;</code>
+       */
+      UNKNOWN(3, 4),
+      ;
+
+      /**
+       * <code>SUCCESS = 1;</code>
+       */
+      public static final int SUCCESS_VALUE = 1;
+      /**
+       * <code>FAIL = 2;</code>
+       */
+      public static final int FAIL_VALUE = 2;
+      /**
+       * <code>SERVER_ERROR = 3;</code>
+       */
+      public static final int SERVER_ERROR_VALUE = 3;
+      /**
+       * <code>UNKNOWN = 4;</code>
+       */
+      public static final int UNKNOWN_VALUE = 4;
+
+
+      public final int getNumber() { return value; }
+
+      public static LoginState valueOf(int value) {
+        switch (value) {
+          case 1: return SUCCESS;
+          case 2: return FAIL;
+          case 3: return SERVER_ERROR;
+          case 4: return UNKNOWN;
+          default: return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<LoginState>
+          internalGetValueMap() {
+        return internalValueMap;
+      }
+      private static com.google.protobuf.Internal.EnumLiteMap<LoginState>
+          internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<LoginState>() {
+              public LoginState findValueByNumber(int number) {
+                return LoginState.valueOf(number);
+              }
+            };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor
+          getValueDescriptor() {
+        return getDescriptor().getValues().get(index);
+      }
+      public final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptorForType() {
+        return getDescriptor();
+      }
+      public static final com.google.protobuf.Descriptors.EnumDescriptor
+          getDescriptor() {
+        return com.github.onlynight.chatim.server.data.external.External.LoginResult.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final LoginState[] VALUES = values();
+
+      public static LoginState valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException(
+            "EnumValueDescriptor is not for this type.");
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int index;
+      private final int value;
+
+      private LoginState(int index, int value) {
+        this.index = index;
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:LoginResult.LoginState)
+    }
+
+    private int bitField0_;
+    // required .LoginResult.LoginState state = 1;
+    public static final int STATE_FIELD_NUMBER = 1;
+    private com.github.onlynight.chatim.server.data.external.External.LoginResult.LoginState state_;
+    /**
+     * <code>required .LoginResult.LoginState state = 1;</code>
+     */
+    public boolean hasState() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>required .LoginResult.LoginState state = 1;</code>
+     */
+    public com.github.onlynight.chatim.server.data.external.External.LoginResult.LoginState getState() {
+      return state_;
+    }
+
+    // required string msg = 2;
+    public static final int MSG_FIELD_NUMBER = 2;
+    private java.lang.Object msg_;
+    /**
+     * <code>required string msg = 2;</code>
+     */
+    public boolean hasMsg() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>required string msg = 2;</code>
+     */
+    public java.lang.String getMsg() {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          msg_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>required string msg = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getMsgBytes() {
+      java.lang.Object ref = msg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        msg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    // optional int64 connectionId = 3;
+    public static final int CONNECTIONID_FIELD_NUMBER = 3;
+    private long connectionId_;
+    /**
+     * <code>optional int64 connectionId = 3;</code>
+     */
+    public boolean hasConnectionId() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional int64 connectionId = 3;</code>
+     */
+    public long getConnectionId() {
+      return connectionId_;
+    }
+
+    private void initFields() {
+      state_ = com.github.onlynight.chatim.server.data.external.External.LoginResult.LoginState.SUCCESS;
+      msg_ = "";
+      connectionId_ = 0L;
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized != -1) return isInitialized == 1;
+
+      if (!hasState()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      if (!hasMsg()) {
+        memoizedIsInitialized = 0;
+        return false;
+      }
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeEnum(1, state_.getNumber());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getMsgBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeInt64(3, connectionId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(1, state_.getNumber());
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getMsgBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(3, connectionId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static com.github.onlynight.chatim.server.data.external.External.LoginResult parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.github.onlynight.chatim.server.data.external.External.LoginResult parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.github.onlynight.chatim.server.data.external.External.LoginResult parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.github.onlynight.chatim.server.data.external.External.LoginResult parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.github.onlynight.chatim.server.data.external.External.LoginResult parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.github.onlynight.chatim.server.data.external.External.LoginResult parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.github.onlynight.chatim.server.data.external.External.LoginResult parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.github.onlynight.chatim.server.data.external.External.LoginResult parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.github.onlynight.chatim.server.data.external.External.LoginResult parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.github.onlynight.chatim.server.data.external.External.LoginResult parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(com.github.onlynight.chatim.server.data.external.External.LoginResult prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code LoginResult}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder>
+       implements com.github.onlynight.chatim.server.data.external.External.LoginResultOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.github.onlynight.chatim.server.data.external.External.internal_static_LoginResult_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.github.onlynight.chatim.server.data.external.External.internal_static_LoginResult_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.github.onlynight.chatim.server.data.external.External.LoginResult.class, com.github.onlynight.chatim.server.data.external.External.LoginResult.Builder.class);
+      }
+
+      // Construct using com.github.onlynight.chatim.server.data.external.External.LoginResult.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        state_ = com.github.onlynight.chatim.server.data.external.External.LoginResult.LoginState.SUCCESS;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        msg_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        connectionId_ = 0L;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.github.onlynight.chatim.server.data.external.External.internal_static_LoginResult_descriptor;
+      }
+
+      public com.github.onlynight.chatim.server.data.external.External.LoginResult getDefaultInstanceForType() {
+        return com.github.onlynight.chatim.server.data.external.External.LoginResult.getDefaultInstance();
+      }
+
+      public com.github.onlynight.chatim.server.data.external.External.LoginResult build() {
+        com.github.onlynight.chatim.server.data.external.External.LoginResult result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.github.onlynight.chatim.server.data.external.External.LoginResult buildPartial() {
+        com.github.onlynight.chatim.server.data.external.External.LoginResult result = new com.github.onlynight.chatim.server.data.external.External.LoginResult(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.state_ = state_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.msg_ = msg_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.connectionId_ = connectionId_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.github.onlynight.chatim.server.data.external.External.LoginResult) {
+          return mergeFrom((com.github.onlynight.chatim.server.data.external.External.LoginResult)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.github.onlynight.chatim.server.data.external.External.LoginResult other) {
+        if (other == com.github.onlynight.chatim.server.data.external.External.LoginResult.getDefaultInstance()) return this;
+        if (other.hasState()) {
+          setState(other.getState());
+        }
+        if (other.hasMsg()) {
+          bitField0_ |= 0x00000002;
+          msg_ = other.msg_;
+          onChanged();
+        }
+        if (other.hasConnectionId()) {
+          setConnectionId(other.getConnectionId());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        if (!hasState()) {
+          
+          return false;
+        }
+        if (!hasMsg()) {
+          
+          return false;
+        }
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.github.onlynight.chatim.server.data.external.External.LoginResult parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.github.onlynight.chatim.server.data.external.External.LoginResult) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      // required .LoginResult.LoginState state = 1;
+      private com.github.onlynight.chatim.server.data.external.External.LoginResult.LoginState state_ = com.github.onlynight.chatim.server.data.external.External.LoginResult.LoginState.SUCCESS;
+      /**
+       * <code>required .LoginResult.LoginState state = 1;</code>
+       */
+      public boolean hasState() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>required .LoginResult.LoginState state = 1;</code>
+       */
+      public com.github.onlynight.chatim.server.data.external.External.LoginResult.LoginState getState() {
+        return state_;
+      }
+      /**
+       * <code>required .LoginResult.LoginState state = 1;</code>
+       */
+      public Builder setState(com.github.onlynight.chatim.server.data.external.External.LoginResult.LoginState value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        state_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required .LoginResult.LoginState state = 1;</code>
+       */
+      public Builder clearState() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        state_ = com.github.onlynight.chatim.server.data.external.External.LoginResult.LoginState.SUCCESS;
+        onChanged();
+        return this;
+      }
+
+      // required string msg = 2;
+      private java.lang.Object msg_ = "";
+      /**
+       * <code>required string msg = 2;</code>
+       */
+      public boolean hasMsg() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>required string msg = 2;</code>
+       */
+      public java.lang.String getMsg() {
+        java.lang.Object ref = msg_;
+        if (!(ref instanceof java.lang.String)) {
+          java.lang.String s = ((com.google.protobuf.ByteString) ref)
+              .toStringUtf8();
+          msg_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>required string msg = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getMsgBytes() {
+        java.lang.Object ref = msg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          msg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>required string msg = 2;</code>
+       */
+      public Builder setMsg(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        msg_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string msg = 2;</code>
+       */
+      public Builder clearMsg() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        msg_ = getDefaultInstance().getMsg();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>required string msg = 2;</code>
+       */
+      public Builder setMsgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        msg_ = value;
+        onChanged();
+        return this;
+      }
+
+      // optional int64 connectionId = 3;
+      private long connectionId_ ;
+      /**
+       * <code>optional int64 connectionId = 3;</code>
+       */
+      public boolean hasConnectionId() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional int64 connectionId = 3;</code>
+       */
+      public long getConnectionId() {
+        return connectionId_;
+      }
+      /**
+       * <code>optional int64 connectionId = 3;</code>
+       */
+      public Builder setConnectionId(long value) {
+        bitField0_ |= 0x00000004;
+        connectionId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 connectionId = 3;</code>
+       */
+      public Builder clearConnectionId() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        connectionId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:LoginResult)
+    }
+
+    static {
+      defaultInstance = new LoginResult(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:LoginResult)
+  }
+
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_Login_descriptor;
   private static
@@ -2614,6 +3372,11 @@ public final class External {
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_BroadTextMessage_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_LoginResult_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_LoginResult_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2628,8 +3391,12 @@ public final class External {
       "TextMessage\022\014\n\004from\030\001 \002(\t\022\n\n\002to\030\002 \002(\t\022\013\n" +
       "\003msg\030\003 \002(\t\022\021\n\ttimestamp\030\004 \002(\004\"@\n\020BroadTe" +
       "xtMessage\022\014\n\004from\030\001 \002(\t\022\013\n\003msg\030\002 \002(\t\022\021\n\t" +
-      "timestamp\030\003 \002(\004B<\n0com.github.onlynight." +
-      "chatim.server.data.externalB\010External"
+      "timestamp\030\003 \002(\004\"\234\001\n\013LoginResult\022&\n\005state" +
+      "\030\001 \002(\0162\027.LoginResult.LoginState\022\013\n\003msg\030\002" +
+      " \002(\t\022\024\n\014connectionId\030\003 \001(\003\"B\n\nLoginState" +
+      "\022\013\n\007SUCCESS\020\001\022\010\n\004FAIL\020\002\022\020\n\014SERVER_ERROR\020" +
+      "\003\022\013\n\007UNKNOWN\020\004B<\n0com.github.onlynight.c",
+      "hatim.server.data.externalB\010External"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -2660,6 +3427,12 @@ public final class External {
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_BroadTextMessage_descriptor,
               new java.lang.String[] { "From", "Msg", "Timestamp", });
+          internal_static_LoginResult_descriptor =
+            getDescriptor().getMessageTypes().get(4);
+          internal_static_LoginResult_fieldAccessorTable = new
+            com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+              internal_static_LoginResult_descriptor,
+              new java.lang.String[] { "State", "Msg", "ConnectionId", });
           return null;
         }
       };

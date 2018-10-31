@@ -41,12 +41,6 @@ public class LogicConnectionHandler extends ChannelHandlerAdapter {
         }
     }
 
-    @Override
-    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
-        cause.printStackTrace();
-        ctx.close();
-    }
-
     private void handShakeWithLogicServer(ChannelHandlerContext ctx) {
         Internal.IHandshake handshake = Internal.IHandshake.newBuilder()
                 .setFrom(Internal.ServerType.GATE)

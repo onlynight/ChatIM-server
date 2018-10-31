@@ -28,7 +28,10 @@ public class ClientConnections {
 
     public static ChannelHandlerContext getConnection(String userId) {
         Long connectionId = userConnectionMap.get(userId);
-        return connections.get(connectionId);
+        if (connectionId != null) {
+            return connections.get(connectionId);
+        }
+        return null;
     }
 
     public static void removeConnection(long connectionId) {

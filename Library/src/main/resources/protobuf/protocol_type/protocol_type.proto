@@ -5,6 +5,7 @@ enum ProtocolType {
     LOGIN = 100;
     TEXT_MESSAGE = 101;
     BROAD_TEXT_MESSAGE = 102;
+    LOGIN_RESULT = 103;
 
     I_HANDSHAKE = 200;
     I_LOGIN = 201;

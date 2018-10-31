@@ -15,6 +15,9 @@ public class ProtocolMapRegistry {
         ProtocolMap.register(Protocol.ProtocolType.BROAD_TEXT_MESSAGE,
                 External.BroadTextMessage::parseFrom, External.BroadTextMessage.class);
 
+        ProtocolMap.register(Protocol.ProtocolType.LOGIN_RESULT,
+                External.LoginResult::parseFrom, External.LoginResult.class);
+
 
         ProtocolMap.register(Protocol.ProtocolType.I_HANDSHAKE,
                 Internal.IHandshake::parseFrom, Internal.IHandshake.class);

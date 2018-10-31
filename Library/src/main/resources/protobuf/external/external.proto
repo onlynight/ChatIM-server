@@ -25,3 +25,18 @@ message BroadTextMessage {
     required uint64 timestamp = 3;
 
 }
+
+message LoginResult {
+
+    required LoginState state = 1;
+    required string msg = 2;
+    optional int64 connectionId = 3;
+
+    enum LoginState {
+        SUCCESS = 1;
+        FAIL = 2;
+        SERVER_ERROR = 3;
+        UNKNOWN = 4;
+    }
+
+}
