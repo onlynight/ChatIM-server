@@ -5,4 +5,5 @@ include 'Library'
 include 'Auth'
 include 'Logic'
 include 'Client'
+include 'BIOClient'
 
