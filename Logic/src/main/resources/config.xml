@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <server>
     <gate ip="127.0.0.1"
-            port="8080"/>
+            port="8090"/>
 
     <auth ip="127.0.0.1"
-          port="8081"/>
+          port="8091"/>
 
     <logic ip="127.0.0.1"
-           port="8082"/>
+           port="8092"/>
 </server>

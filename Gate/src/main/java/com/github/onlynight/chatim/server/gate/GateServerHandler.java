@@ -20,6 +20,7 @@ public class GateServerHandler extends ChannelHandlerAdapter {
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         ClientConnections.addConnection(ctx);
         logger.info("client num is : " + ClientConnections.connectionLength());
+        ctx.writeAndFlush('a');
     }
 
     @Override
@@ -27,18 +28,21 @@ public class GateServerHandler extends ChannelHandlerAdapter {
         ClientConnections.removeConnection(ctx);
         logger.info("client num is : " + ClientConnections.connectionLength());
 
-        ClientConnections.unbindUser2Connection(ctx.attr(ClientConnections.USER_ID).get());
-        ClientConnections.removeConnection(ctx);
+        String userId = ctx.attr(ClientConnections.USER_ID).get();
+        if (userId != null) {
+            ClientConnections.unbindUser2Connection(userId);
+            ClientConnections.removeConnection(ctx);
 
-        Internal.ILogout iLogout = Internal.ILogout.newBuilder()
-                .setFrom(Internal.ServerType.GATE)
-                .setTo(Internal.ServerType.LOGIC)
-                .setUserId(ctx.attr(ClientConnections.USER_ID).get())
-                .setConnectionId(ctx.attr(ClientConnections.CONNECTION_ID).get())
-                .build();
+            Internal.ILogout iLogout = Internal.ILogout.newBuilder()
+                    .setFrom(Internal.ServerType.GATE)
+                    .setTo(Internal.ServerType.LOGIC)
+                    .setUserId(userId)
+                    .setConnectionId(ctx.attr(ClientConnections.CONNECTION_ID).get())
+                    .build();
 
-        AuthConnectionHandler.getInstance()
-                .getChannelHandlerContext().writeAndFlush(iLogout);
+            AuthConnectionHandler.getInstance()
+                    .getChannelHandlerContext().writeAndFlush(iLogout);
+        }
     }
 
     @Override

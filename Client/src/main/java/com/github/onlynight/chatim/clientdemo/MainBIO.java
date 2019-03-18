@@ -1,5 +1,6 @@
 package com.github.onlynight.chatim.clientdemo;
 
+import com.github.onlynight.chatim.clientdemo.config.ConfigReader;
 import com.github.onlynight.chatim.server.data.external.External;
 import com.github.onlynight.chatim.server.data.protocol.Protocol;
 import com.github.onlynight.chatim.server.data.protocol.ProtocolMap;
@@ -21,13 +22,18 @@ public class MainBIO {
 
     public static void main(String[] args) throws UnknownHostException {
 
+        ConfigReader configReader = new ConfigReader(
+                Main.class.getClassLoader()
+                        .getResourceAsStream("config.xml")
+        );
+
         ProtocolMapRegistry.initRegistry();
 
         try {
             // read buffer
             byte[] buf = new byte[4096];
 
-            Socket socket = new Socket("127.0.0.1", 8080);
+            Socket socket = new Socket(configReader.getGateIp(), configReader.getGatePort());
 
             OutputStream os = socket.getOutputStream();
             InputStream is = socket.getInputStream();

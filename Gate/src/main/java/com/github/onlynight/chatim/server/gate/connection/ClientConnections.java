@@ -48,7 +48,9 @@ public class ClientConnections {
     }
 
     public static void unbindUser2Connection(String userId) {
-        Long connectionId = userConnectionMap.remove(userId);
+        if (userId != null && !userId.equals("")) {
+            userConnectionMap.remove(userId);
+        }
 //        removeConnection(connectionId);
     }
 
